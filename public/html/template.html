@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="../css/output.css" /> 
@@ -17,11 +17,11 @@
         <script src="https://kit.fontawesome.com/4fcf61398f.js" crossorigin="anonymous"></script>
         <title>Template</title>
     </head>
-    <body>
-        <div class="min-h-screen flex flex-row bg-gray-100 font-Inter ]">
+    <body class="font-Inter">
+        <div class="min-h-screen flex flex-row bg-gray-100 dark:bg-slate-800">
 
             <!-- Sidebar - Start -->
-            <div id="sidebar" class="h-[100vh] flex flex-col w-56 relative bg-primary transition-transform duration-700 transform">
+            <div id="sidebar" class="h-[100vh] flex flex-col w-56 fixed z-[999] bg-primary transition-transform duration-700 transform">
                 <div class="flex items-center justify-center h-20 mt-5 mb-12">
                     <img src="../assets/svg/Logo.svg" alt="Logo" class="w-[100px]">
                 </div>
@@ -73,14 +73,14 @@
                 
                 <!-- Toggle Collapsed Sidebar - Start -->
                 <div class="flex-1 p-4 absolute top-[40%] left-[207px]">
-                    <button id="toggleButton" class="bg-gray-800 text-white p-2 rounded-r-lg rounded-l-sm w-[30px] h-[50px]">
+                    <button id="toggleButton" class="bg-secondary dark:bg-white text-white dark:text-secondary p-2 rounded-r-lg rounded-l-sm w-[30px] h-[50px]">
                         <i id="toggleIcon" class="fa-sharp fa-solid fa-chevron-left"></i>
                     </button>
                 </div>
                 <!-- Toggle Collapsed Sidebar - End -->
 
             </div>
-            <!-- Sidebar - Start -->
+            <!-- Sidebar - End -->
 
         </div>
 
