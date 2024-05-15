@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../css/output.css" /> 
+
+        <!-- link ke css  -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- link ke google font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <!-- link ke google font  -->
+
+        <!-- link ke icon fontAwesome -->
+        <script src="https://kit.fontawesome.com/4fcf61398f.js" crossorigin="anonymous"></script>
+        <title>Template</title>
+    </head>
+    <body>
+        <div class="min-h-screen flex flex-row bg-gray-100 font-Inter ]">
+
+            <!-- Sidebar - Start -->
+            <div id="sidebar" class="h-[100vh] flex flex-col w-56 relative bg-primary transition-transform duration-700 transform">
+                <div class="flex items-center justify-center h-20 mt-5 mb-12">
+                    <img src="../assets/svg/Logo.svg" alt="Logo" class="w-[100px]">
+                </div>
+                <div id="">
+                    <ul class="flex flex-col items-center py-4 gap-5">
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex  items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-house"></i></span>
+                                <span class="text-sm font-medium">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-user"></i></i></span>
+                                <span class="text-sm font-medium">Profile</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-bookmark"></i></span>
+                                <span class="text-sm font-medium">Bookmark</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-gear"></i></span>
+                                <span class="text-sm font-medium">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="logOut-btn" class="flex flex-col items-center py-4">
+                        <ul class="flex flex-col items-center py-4">
+                            <li class="w-[125px]">
+                                <a href="#" class="flex absolute bottom-5 flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white opacity-[50%] hover:opacity-100">
+                                    <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px] "><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                                    <span class="text-sm font-medium">Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Toggle Collapsed Sidebar - Start -->
+                <div class="flex-1 p-4 absolute top-[40%] left-[207px]">
+                    <button id="toggleButton" class="bg-gray-800 text-white p-2 rounded-r-lg rounded-l-sm w-[30px] h-[50px]">
+                        <i id="toggleIcon" class="fa-sharp fa-solid fa-chevron-left"></i>
+                    </button>
+                </div>
+                <!-- Toggle Collapsed Sidebar - End -->
+
+            </div>
+            <!-- Sidebar - Start -->
+
+        </div>
+
+        <script src="../../src/js/template.js"></script>
+    </body>
+</html>
