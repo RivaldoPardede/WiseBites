@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="stylesheet" href="../css/output.css" /> 
+        <!-- link ke css  -->
+        
+        <!-- link ke google font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <!-- link ke google font  -->
+
+        <!-- link ke icon fontAwesome -->
+        <script src="https://kit.fontawesome.com/8b0b03f283.js" crossorigin="anonymous"></script>
+        <title>Detail Recipe</title>
+    </head>
+    <body class="font-Inter">
+        <div class="min-h-screen flex flex-row bg-gray-100 dark:bg-slate-800">
+
+            <!-- Sidebar - Start -->
+            <div id="sidebar" class="h-[100vh] flex flex-col w-56 fixed z-[999] bg-primary transition-transform duration-700 transform">
+                <div class="flex items-center justify-center h-20 mt-5 mb-12">
+                    <img src="../assets/svg/Logo.svg" alt="Logo" class="w-[100px]">
+                </div>
+                <div id="">
+                    <!-- Hapus opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200 -->
+                    <!-- dari tag li, ketika sedang berada di page tertentu, misal -->
+                    <!-- sedang berada di page dashboard, maka class yang ada di pernyataan pertama hapus semua -->
+                    <ul class="flex flex-col items-center py-4 gap-5">
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex  items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-house"></i></span>
+                                <span class="text-sm font-medium">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-user"></i></i></span>
+                                <span class="text-sm font-medium">Profile</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-bookmark"></i></span>
+                                <span class="text-sm font-medium">Bookmark</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative opacity-100 translate-x-2 ">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="setting.html" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-gear"></i></span>
+                                <span class="text-sm font-medium">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="logOut-btn" class="flex flex-col items-center py-4">
+                        <ul class="flex flex-col items-center py-4">
+                            <li class="w-[125px]">
+                                <a href="#" class="flex absolute bottom-5 flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white opacity-[50%] hover:opacity-100">
+                                    <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px] "><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                                    <span class="text-sm font-medium">Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Toggle Collapsed Sidebar - Start -->
+                <div class="flex-1 p-4 absolute top-[40%] left-[207px]">
+                    <button id="toggleButton" class="bg-secondary dark:bg-white text-white dark:text-secondary p-2 rounded-r-lg rounded-l-sm w-[30px] h-[50px]">
+                        <i id="toggleIcon" class="fa-sharp fa-solid fa-chevron-left"></i>
+                    </button>
+                </div>
+                <!-- Toggle Collapsed Sidebar - End -->
+                
+            </div>
+            <!-- Sidebar - End -->
+
+            <!-- Main Content - Start -->
+    <div class="flex flex-col flex-1 bg-greybg">
+        <!-- Navbar -->
+        <div class="flex justify-between items-center lg:mb-20 mb-10 py-10 shadow-xl bg-white">
+            <h1 class="text-3xl font-extrabold ml-60">Settings</h1>
+        </div>
+        <!-- Navbar - End -->
+
+        <!-- Detail Setting - Start -->
+        <div class="flex flex-col mb-5 ml-72 mr-20 lg:ml-96 lg:mr-48 py-12 px-10 bg-white">
+            <div class="flex flex-col lg:flex-row">
+                <div class="flex flex-col w-full lg:w-1/2 space-y-4">
+                    <!-- Name -->
+                    <div class="relative">
+                        <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg" type="text" id="name" value="" placeholder="Lisa Nobara">
+                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="name">name</span>
+                    </div>
+                    <!-- Email -->
+                    <div class="relative">
+                        <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg" type="text" id="email" value="" placeholder="lisamanoban@gmail.com">
+                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="email">email</span>
+                    </div>
+                    <!-- Profile Picture -->
+                    <div class="relative">
+                        <label for="profilePicture" class="absolute left-3 -top-2 bg-white text-greyfont text-sm font-semibold px-1">profile picture</label>
+                        <label class="block w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer " for="profilePicture">
+                            <i class="fa-solid fa-file-arrow-up text-greyfont"></i>
+                            <span class="text-greyfont font-medium ml-2">Upload file.</span>
+                        </label>
+                        <input class="hidden" type="file" id="profilePicture">
+                    </div>
+                </div>
+
+                <div class="flex flex-col w-full lg:w-1/2 space-y-4 lg:ml-8 mt-4 lg:mt-0">
+                    <!-- Old Password -->
+                    <div class="relative">
+                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="oldPassword">old password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                        <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="oldPassword" placeholder="********">
+                    </div>
+                    <!-- New Password -->
+                    <div class="relative">
+                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="newPassword">new password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                        <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="newPassword" placeholder="********">
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="relative">
+                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="confirmPassword">confirm password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                        <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="confirmPassword" placeholder="********">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Update Profile Button -->
+            <div class="w-full mt-8 shadow-xl">
+                <button class="w-full py-3 bg-primary text-white font-bold rounded-md hover:bg-red-600 transition duration-200 ease-in-out">Update Profile</button>
+            </div>
+
+        </div> 
+        <!-- Detail Setting - End --> 
+</div>
+<!-- Main Content - End -->
+
+
+
+
+        </div>
+        <script src="../../src/js/detailrecipe.js"></script>
+
+    </body>
+</html>
