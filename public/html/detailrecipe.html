@@ -53,7 +53,7 @@
                         </li>
                         <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
                             <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                            <a href="setting.html" class="w-[125px] flex flex-row items-center h-12  text-white">
                                 <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-gear"></i></span>
                                 <span class="text-sm font-medium">Settings</span>
                             </a>
@@ -70,35 +70,39 @@
                         </ul>
                     </div>
                 </div>
-                
-                
 
+                <!-- Toggle Collapsed Sidebar - Start -->
+                <div class="flex-1 p-4 absolute top-[40%] left-[207px]">
+                    <button id="toggleButton" class="bg-secondary dark:bg-white text-white dark:text-secondary p-2 rounded-r-lg rounded-l-sm w-[30px] h-[50px]">
+                        <i id="toggleIcon" class="fa-sharp fa-solid fa-chevron-left"></i>
+                    </button>
+                </div>
+                <!-- Toggle Collapsed Sidebar - End -->
+                
             </div>
             <!-- Sidebar - End -->
 
             <!-- Main Content - Start -->
-<div class="flex flex-col flex-1 ml-56">
-    <div class="bg-white rounded-lg shadow-lg">
+<div class="flex flex-col flex-1 ">
         <!-- Navbar -->
         <div class="flex justify-between items-center mb-11 py-10 shadow-xl">
-            <h1 class="text-3xl font-bold pl-11">Detail Recipe</h1>
+            <h1 class="text-3xl font-extrabold ml-60">Detail Recipe</h1>
         </div>
         <!-- Header - End -->
 
         <!-- Detail Atas - Start -->
-        <div class="flex flex-col lg:flex-row mb-5">
+        <div class="flex flex-col lg:flex-row mb-5 ml-56">
             <!-- Menu Detail - Start -->
-            <div class="flex-shrink-0 pl-20">
+            <div class="flex-shrink-0">
                 <img src="../assets/png/food1.jpg" alt="Italian Chicken Salad" class="rounded-2xl w-full max-w-lg h-full max-h-[470px]  px-6 mb-8">
                 <h1 class="text-[32px] mb-3 px-6">Italian Chicken Salad</h1>
                 <p class="text-[32px] font-semibold text-gray-700 mb-3.5 px-6">Rp. 20k</p>
                 <div class="flex gap-x-16 ml-8 lg:ml-72 mb-5">
-                    <a href="#">
-                        <p class="rounded-2xl shadow-sm lg:shadow-2xl shadow-black py-1 px-4 hover:bg-primary hover:text-white transition duration-200 ease-in">
-                            <span class="text-[12px] font-semibold">Estimate Price</span>
-                            <i class="fa-light fa-square-share-nodes ml-2"></i>
-                        </p>
-                    </a>
+                    <button id="showEstimationBtn" class="rounded-2xl shadow-sm lg:shadow-2xl shadow-black py-1 px-4 hover:bg-primary hover:text-white transition duration-200 ease-in">
+                        <span class="text-[12px] font-semibold">Estimate Price</span>
+                        <i class="fa-light fa-square-share-nodes ml-2"></i>
+                    </button>                    
+                    
                     <a href="#"><i class="fa-regular fa-share my-2"></i></a>
                 </div>
             </div>
@@ -121,7 +125,7 @@
 
 
         <!-- Detail Bawah - Start -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-20 mb-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 ml-56 px-10 mb-10">
             <!-- Ingridients - Start -->
             <div class="bg-greybg rounded-xl px-11 py-9">
                 <h2 class="text-2xl font-semibold text-center text-greyfont pb-9">Ingredients</h2>
@@ -150,13 +154,59 @@
             </div>
             <!-- Direction - Start -->
         </div>
-    </div>
+
+        <!-- Estimation - Start -->
+        <div id="Estimation" class="fixed inset-0 bg-gray-700 bg-opacity-75 flex items-center justify-center hidden">
+            <div class="bg-white rounded-lg shadow-lg max-w-3xl max-h-fit w-full p-6 relative">
+                <span id="closeEstimationBtn" class="absolute top-0 right-0 p-4 cursor-pointer text-greyfont font-semibold">&times;</span>
+                <h2 class="text-center text-2xl font-bold mb-6">Estimation Price</h2>
+                <table class="w-full">
+                    <tbody>
+                        <tr class="border-b mb-3">
+                            <td class="text-greyfont py-2">50gr Lettuce</td>
+                            <td class="text-right text-primary font-semibold py-2">Rp.2k</td>
+                        </tr>
+                        <tr class="border-b mb-3">
+                            <td class="text-greyfont py-2">10gr Purple cabbage</td>
+                            <td class="text-right text-primary font-semibold py-2">Rp.2k</td>
+                        </tr>
+                        <tr class="border-b mb-3">
+                            <td class="text-greyfont py-2">10gr Cucumber</td>
+                            <td class="text-right text-primary font-semibold py-2">Rp.2k</td>
+                        </tr>
+                        <tr class="border-b mb-3">
+                            <td class="text-greyfont py-2">2 Eggs</td>
+                            <td class="text-right text-primary font-semibold py-2">Rp.5k</td>
+                        </tr>
+                        <tr class="border-b mb-3">
+                            <td class="text-greyfont py-2">100gr Grilled chicken</td>
+                            <td class="text-right text-primary font-semibold py-2">Rp.6k</td>
+                        </tr>
+                        <tr class="border-b mb-3">
+                            <td class="text-greyfont py-2">20gr Boiled Corn</td>
+                            <td class="text-right text-primary font-semibold py-2">Rp.1k</td>
+                        </tr>
+                        <tr class="border-b mb-3">
+                            <td class="text-greyfont py-2">10gr Salad Dressing</td>
+                            <td class="text-right text-primary font-semibold py-2">Rp.1k</td>
+                        </tr>
+                        <tr class="font-bold">
+                            <td class="text-greyfont py-4">Total</td>
+                            <td class="text-right py-4">Rp.19k</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Estimation End -->
 </div>
 <!-- Main Content - End -->
 
 
-        </div>
 
+
+        </div>
+        <script src="../../src/js/detailrecipe.js"></script>
 
     </body>
 </html>
