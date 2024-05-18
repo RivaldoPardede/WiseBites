@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     toggleButton.addEventListener('click', () => {
         sidebar.classList.toggle('open');
-        // sidebar.classList.toggle('translate-x-[0%]');
         toggleIcon.classList.toggle('fa-chevron-right');
         toggleIcon.classList.toggle('fa-chevron-left');
     });
