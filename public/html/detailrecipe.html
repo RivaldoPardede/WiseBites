@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="stylesheet" href="../css/output.css" /> 
+        <!-- link ke css  -->
+        
+        <!-- link ke google font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <!-- link ke google font  -->
+
+        <!-- link ke icon fontAwesome -->
+        <script src="https://kit.fontawesome.com/8b0b03f283.js" crossorigin="anonymous"></script>
+        <title>Detail Recipe</title>
+    </head>
+    <body class="font-Inter">
+        <div class="min-h-screen flex flex-row bg-gray-100 dark:bg-slate-800">
+
+            <!-- Sidebar - Start -->
+            <div id="sidebar" class="h-[100vh] flex flex-col w-56 fixed z-[999] bg-primary transition-transform duration-700 transform">
+                <div class="flex items-center justify-center h-20 mt-5 mb-12">
+                    <img src="../assets/svg/Logo.svg" alt="Logo" class="w-[100px]">
+                </div>
+                <div id="">
+                    <!-- Hapus opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200 -->
+                    <!-- dari tag li, ketika sedang berada di page tertentu, misal -->
+                    <!-- sedang berada di page dashboard, maka class yang ada di pernyataan pertama hapus semua -->
+                    <ul class="flex flex-col items-center py-4 gap-5">
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex  items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-house"></i></span>
+                                <span class="text-sm font-medium">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-user"></i></i></span>
+                                <span class="text-sm font-medium">Profile</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-bookmark"></i></span>
+                                <span class="text-sm font-medium">Bookmark</span>
+                            </a>
+                        </li>
+                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
+                            <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
+                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                                <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-gear"></i></span>
+                                <span class="text-sm font-medium">Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div id="logOut-btn" class="flex flex-col items-center py-4">
+                        <ul class="flex flex-col items-center py-4">
+                            <li class="w-[125px]">
+                                <a href="#" class="flex absolute bottom-5 flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white opacity-[50%] hover:opacity-100">
+                                    <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px] "><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                                    <span class="text-sm font-medium">Log Out</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+            <!-- Sidebar - End -->
+
+            <!-- Main Content - Start -->
+<div class="flex flex-col flex-1 ml-56">
+    <div class="bg-white rounded-lg shadow-lg">
+        <!-- Navbar -->
+        <div class="flex justify-between items-center mb-11 py-10 shadow-xl">
+            <h1 class="text-3xl font-bold pl-11">Detail Recipe</h1>
+        </div>
+        <!-- Header - End -->
+
+        <!-- Detail Atas - Start -->
+        <div class="flex flex-col lg:flex-row mb-5">
+            <!-- Menu Detail - Start -->
+            <div class="flex-shrink-0 pl-20">
+                <img src="../assets/png/food1.jpg" alt="Italian Chicken Salad" class="rounded-2xl w-full max-w-lg h-full max-h-[470px]  px-6 mb-8">
+                <h1 class="text-[32px] mb-3 px-6">Italian Chicken Salad</h1>
+                <p class="text-[32px] font-semibold text-gray-700 mb-3.5 px-6">Rp. 20k</p>
+                <div class="flex gap-x-16 ml-8 lg:ml-72 mb-5">
+                    <a href="#">
+                        <p class="rounded-2xl shadow-sm lg:shadow-2xl shadow-black py-1 px-4 hover:bg-primary hover:text-white transition duration-200 ease-in">
+                            <span class="text-[12px] font-semibold">Estimate Price</span>
+                            <i class="fa-light fa-square-share-nodes ml-2"></i>
+                        </p>
+                    </a>
+                    <a href="#"><i class="fa-regular fa-share my-2"></i></a>
+                </div>
+            </div>
+            <!-- Menu Detail - End -->
+
+            <!-- Description - Start -->
+            <div class="mt-4 ml-10 lg:mt-0 lg:ml-6 flex-grow pr-10 lg:pr-20">
+                <div class="bg-greybg rounded-xl">
+                    <div class="py-10 px-10">
+                        <p class="text-greyfont text-2xl font-semibold text-center ">Description</p>
+                        <p class="text-greyfont text-xl pt-5">
+                            Salad is a healthy and refreshing meal that is rich in vitamins, minerals, and fiber. It is also low in calories and fat, making it a great choice for a healthy diet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Description - End -->
+        </div>
+        <!-- Detail Atas - End -->
+
+
+        <!-- Detail Bawah - Start -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 px-20 mb-10">
+            <!-- Ingridients - Start -->
+            <div class="bg-greybg rounded-xl px-11 py-9">
+                <h2 class="text-2xl font-semibold text-center text-greyfont pb-9">Ingredients</h2>
+                <ol class="custom-disc list-inside text-greyfont grid grid-cols-1 lg:grid-cols-2 gap-x-6">
+                    <li>50gr Lettuce</li>
+                    <li>10gr Purple cabbage</li>
+                    <li>10gr Cucumber</li>
+                    <li>10gr Tomato</li>
+                    <li>10gr Edamame</li>
+                    <li>100gr Grilled chicken</li>
+                    <li>20gr Boiled Corn</li>
+                </ol>
+            </div>
+            <!-- Ingridients - End -->
+
+            <!-- Direction - Start -->
+            <div class="bg-greybg rounded-xl px-11 py-9">
+                <h2 class="text-2xl font-semibold text-center text-greyfont pb-9">Directions</h2>
+                <ol class="custom-list-decimal list-inside text-greyfont">
+                    <li>Wash and chop lettuce, purple cabbage, and cucumber.</li>
+                    <li>Boil eggs and corn separately.</li>
+                    <li>Grill chicken until cooked.</li>
+                    <li>Peel and slice boiled eggs.</li>
+                    <li>Cut grilled chicken into bite-sized pieces.</li>
+                </ol>
+            </div>
+            <!-- Direction - Start -->
+        </div>
+    </div>
+</div>
+<!-- Main Content - End -->
+
+
+        </div>
+
+
+    </body>
+</html>
