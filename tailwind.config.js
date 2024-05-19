@@ -1,3 +1,5 @@
+const autoprefixer = require("autoprefixer");
+
 module.exports = {
     content: [
         './public/**/*.{html,js,php}',
@@ -18,6 +20,7 @@ module.exports = {
         },
     },
     plugins: [
+        autoprefixer,
         function({ addComponents }) {
             addComponents({
             '.custom-list-decimal': {
