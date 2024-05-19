@@ -107,9 +107,9 @@
                 </div>
             </nav>
             <!-- Navbar - End -->
-
+            
             <!-- SearchBar - Start -->
-            <form class="flex items-center my-10 max-w-xl drop-shadow-md dark:shadow-slate mx-auto">   
+            <form class="flex items-center my-10 max-w-xl mx-2 drop-shadow-md dark:shadow-slate sm:mx-auto">   
                 <div class="relative w-full">
                     <div class="absolute inset-y-0 left-0 flex items-center text-greyfont pl-3 pointer-events-none">
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
@@ -124,16 +124,17 @@
             </form>
             <!-- SearchBar - End --> 
             
-            <div class="py-12 transition bg-slate-900/50 duration-150 ease-in-out z-10 hidden absolute top-0 right-0 bottom-0 left-0" id="modal">
+            <!-- Filter Modal - Start -->
+            <div class="py-12 transition bg-slate-900/50 h-full duration-150 ease-in-out z-10 hidden absolute top-0 right-0 bottom-0 left-0" id="modal">
                 <div  role="alert" class="container mx-auto w-11/12 md:w-[75%]">
-                    <div class="relative py-8 px-5 md:px-10 bg-white shadow-md rounded-2xl border border-gray-400">
-                        <h1 class="text-gray-800 text-center font-lg font-bold tracking-normal leading-tight mb-4">Filter</h1>
-                        <hr class="py-3">
+                    <div class="relative py-8 px-5 md:px-10 bg-white dark:bg-slate-600 shadow-md rounded-2xl border border-gray-400">
+                        <h1 class="text-gray-800 dark:text-slate-200 text-center font-lg font-bold tracking-normal leading-tight mb-4">Filter</h1>
                         
                         <form id="filterForm">
+                            <hr class="py-3">
 
                             <!-- Bahan Makanan -->
-                            <h2 class="text-md font-semibold mb-4">Pilih Bahan Makanan:</h2>
+                            <h2 class="text-md font-semibold mb-4 dark:text-slate-200">Choose your ingredients:</h2>
                             <div class="grid grid-cols-4 gap-4 md:grid-cols-5 lg:grid-cols-7 min-h-[40px] mb-5">
 
                                 <label class="relative flex sm:max-w-[100px] md:max-w-[105px] lg-[120px] max-w-[94px] items-center justify-center sm:max-h-[50px] h-[40px] bg-secondary/50 peer-checked:bg-secondary hover:bg-secondary/80 transition-colors leading-6 py-2 rounded-2xl cursor-pointer">
@@ -197,10 +198,36 @@
                                
                             </div>
                             <!-- Bahan Makanan -->
+
+                            <hr class="py-3">
+                            <h2 class="text-md font-semibold mb-4 dark:text-slate-200">Price Range:</h2>
                             
-                            <div class="flex items-center justify-evenly gap-4 w-full">
-                                <button class="bg-primary transition duration-150 ease-in-out hover:bg-darkPrimary rounded-xl text-white px-4 py-2 text-sm" onclick="modalHandler()">Atur Ulang</button>
-                                <button class="bg-primary transition duration-150 ease-in-out hover:bg-darkPrimary rounded-xl text-white px-8 py-2 text-sm">Pakai</button>
+                            <div class="grid grid-cols-1 gap-3 md:gap-1 lg:gap-0 md:grid-cols-2 mb-5">
+                                <div class="w-72">
+                                    <div class="relative h-10 lg:w-full w-1/2 md:w-[75%]">
+                                        <div class="absolute grid w-5 h-5 place-items-center text-blue-gray-500 top-2/4 left-0 -translate-y-[96%]">
+                                            <span class="px-2 py-[10px] text-gray-700 bg-slate-300 rounded-l text-sm">Rp </span>
+                                        </div>
+                                        <input type="email" placeholder="Minimum"
+                                        class="peer h-full w-full rounded-[7px] !border pl-9 !border-gray-300 border-t-transparent bg-transparent bg-white px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700  shadow-lg shadow-gray-900/5 outline outline-0 ring-4 ring-transparent transition-all placeholder:text-gray-500 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 " />
+                                    </div>
+                                  </div>
+                                
+                                
+                                <div class="w-72">
+                                    <div class="relative h-10 lg:w-full w-1/2 md:w-[75%] ">
+                                        <div class="absolute grid w-5 h-5 place-items-center text-blue-gray-500 top-2/4 left-0 -translate-y-[96%]">
+                                            <span class="px-2 py-[10px] text-gray-700 bg-slate-300 rounded-l text-sm">Rp </span>
+                                        </div>
+                                        <input type="email" placeholder="Maximum"
+                                        class="peer h-full w-full rounded-[7px] !border pl-9 !border-gray-300 border-t-transparent bg-transparent bg-white px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700  shadow-lg shadow-gray-900/5 outline outline-0 ring-4 ring-transparent transition-all placeholder:text-gray-500 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 " />
+                                    </div>
+                                  </div>
+                            </div>
+
+                            <div class="flex items-center justify-end gap-4 w-full">
+                                <button class="bg-primary transition duration-150 ease-in-out hover:bg-darkPrimary rounded-xl text-white px-6 py-3 text-base" onclick="modalHandler()">Reset</button>
+                                <button class="bg-primary transition duration-150 ease-in-out hover:bg-darkPrimary rounded-xl text-white px-10 py-3 text-base">Apply</button>
                             </div>
                         </form>
                         
@@ -215,7 +242,154 @@
                     </div>
                 </div>
             </div> 
+            <!-- Filter Modal - End -->
 
+            <hr class="block w-full mt-2 max-w-[1100px] px-6 py-3 mx-auto shadow-inherit">
+
+            <h1 class="text-slate-800 text-center dark:text-slate-200 text-lg font-bold tracking-normal leading-tight mb-4">All Available Recipes!</h1>
+
+            <!-- Food Card - Start -->
+            <section id="Projects" class="w-full max-w-[1100px] px-6 py-3 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-y-20 gap-x-14 mt-10 mb-5">
+                
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                    <a href="#">
+                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <div class="px-4 py-3">
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <div class="flex items-center mt-2">
+                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
+                                <div class="ml-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </section>
+              
+            <!-- FOod Card - End -->
          </div>
 
 
