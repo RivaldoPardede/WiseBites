@@ -15,7 +15,7 @@
 
         <!-- link ke icon fontAwesome -->
         <script src="https://kit.fontawesome.com/8b0b03f283.js" crossorigin="anonymous"></script>
-        <title>Detail Recipe</title>
+        <title>Settings</title>
     </head>
     <body class="font-Inter">
         <div class="min-h-screen flex flex-row bg-gray-100 dark:bg-slate-800">
@@ -26,32 +26,29 @@
                     <img src="../assets/svg/Logo.svg" alt="Logo" class="w-[100px]">
                 </div>
                 <div id="">
-                    <!-- Hapus opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200 -->
-                    <!-- dari tag li, ketika sedang berada di page tertentu, misal -->
-                    <!-- sedang berada di page dashboard, maka class yang ada di pernyataan pertama hapus semua -->
                     <ul class="flex flex-col items-center py-4 gap-5">
                         <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
                             <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                            <a href="dashboard.html" class="w-[125px] flex flex-row items-center h-12  text-white">
                                 <span class="inline-flex  items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-house"></i></span>
                                 <span class="text-sm font-medium">Dashboard</span>
                             </a>
                         </li>
                         <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
                             <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                            <a href="profile.html" class="w-[125px] flex flex-row items-center h-12  text-white">
                                 <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-user"></i></i></span>
                                 <span class="text-sm font-medium">Profile</span>
                             </a>
                         </li>
                         <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
                             <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                            <a href="#" class="w-[125px] flex flex-row items-center h-12  text-white">
+                            <a href="bookmark.html" class="w-[125px] flex flex-row items-center h-12  text-white">
                                 <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-bookmark"></i></span>
                                 <span class="text-sm font-medium">Bookmark</span>
                             </a>
                         </li>
-                        <li class="flex flex-row opacity-[50%] relative hover:opacity-100 translate-x-2 ">
+                        <li class="flex flex-row relative:opacity-100 translate-x-2">
                             <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
                             <a href="setting.html" class="w-[125px] flex flex-row items-center h-12  text-white">
                                 <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-gear"></i></span>
@@ -83,72 +80,88 @@
             <!-- Sidebar - End -->
 
             <!-- Main Content - Start -->
-    <div class="flex flex-col flex-1 bg-greybg">
-        <!-- Navbar -->
-        <div class="flex justify-between items-center lg:mb-20 mb-10 py-10 shadow-xl bg-white">
-            <h1 class="text-3xl font-extrabold ml-60">Settings</h1>
-        </div>
-        <!-- Navbar - End -->
+            <div id="mainContent" class="w-full ml-0 lg:ml-56 transition-margin-left duration-700 ease-in-out">
+                <!-- Navbar - Start -->
+                <nav class="w-full mt-2 max-w-[1100px] px-6 py-3 mx-auto bg-white border transition duration-300 ease-in-out dark:bg-slate-900 shadow-lg dark:shadow-slate-950 rounded-xl border-slate-200 dark:border-slate-800 bg-opacity-80 backdrop-blur-2xl backdrop-saturate-200">
+                    <div class="flex items-center justify-between text-slate-900 dark:text-white">
+                        <h1 class="mr-4 block cursor-pointer py-1.5 text-base font-semibold leading-relaxed tracking-normal text-inherit antialiased">Settings</h1>
+                        <div class="">
+                            <ul class="flex flex-row gap-2 my-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+                                <li class="block p-1 text-sm antialiased">
+                                    <button id="theme-toggle" type="button" class="mr-0 text-secondary  dark:text-yellow-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm p-2.5">
+                                        <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                                        </svg>
+                                        <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Navbar - End -->
 
-        <!-- Detail Setting - Start -->
-        <div class="flex flex-col mb-5 ml-72 mr-20 lg:ml-96 lg:mr-48 py-12 px-10 bg-white">
-            <div class="flex flex-col lg:flex-row">
-                <div class="flex flex-col w-full lg:w-1/2 space-y-4">
-                    <!-- Name -->
-                    <div class="relative">
-                        <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg" type="text" id="name" value="" placeholder="Lisa Nobara">
-                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="name">name</span>
-                    </div>
-                    <!-- Email -->
-                    <div class="relative">
-                        <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg" type="text" id="email" value="" placeholder="lisamanoban@gmail.com">
-                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="email">email</span>
-                    </div>
-                    <!-- Profile Picture -->
-                    <div class="relative">
-                        <label for="profilePicture" class="absolute left-3 -top-2 bg-white text-greyfont text-sm font-semibold px-1">profile picture</label>
-                        <label class="block w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer " for="profilePicture">
-                            <i class="fa-solid fa-file-arrow-up text-greyfont"></i>
-                            <span class="text-greyfont font-medium ml-2">Upload file.</span>
-                        </label>
-                        <input class="hidden" type="file" id="profilePicture">
-                    </div>
-                </div>
+                <!-- Detail Setting - Start -->
+                <div class="flex flex-col justify-items-center mx-auto  mt-12 mb-5 w-[80%] py-12 px-10 rounded-lg bg-white">
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="flex flex-col w-full lg:w-1/2 space-y-4">
+                            <!-- Name -->
+                            <div class="relative">
+                                <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg" type="text" id="name" value="" placeholder="Lisa Nobara">
+                                <span class="absolute left-2 -top-[12px] bg-white text-greyfont text-sm font-semibold px-1" for="name">name</span>
+                            </div>
+                            <!-- Email -->
+                            <div class="relative">
+                                <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg" type="text" id="email" value="" placeholder="lisamanoban@gmail.com">
+                                <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="email">email</span>
+                            </div>
+                            <!-- Profile Picture -->
+                            <div class="relative">
+                                <label for="profilePicture" class="absolute left-3 -top-2 bg-white text-greyfont text-sm font-semibold px-1">profile picture</label>
+                                <label class="block w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer " for="profilePicture">
+                                    <i class="fa-solid fa-file-arrow-up text-greyfont"></i>
+                                    <span class="text-greyfont font-medium ml-2">Upload file.</span>
+                                </label>
+                                <input class="hidden" type="file" id="profilePicture">
+                            </div>
+                        </div>
 
-                <div class="flex flex-col w-full lg:w-1/2 space-y-4 lg:ml-8 mt-4 lg:mt-0">
-                    <!-- Old Password -->
-                    <div class="relative">
-                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="oldPassword">old password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
-                        <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="oldPassword" placeholder="********">
+                        <div class="flex flex-col w-full lg:w-1/2 space-y-4 lg:ml-8 mt-4 lg:mt-0">
+                            <!-- Old Password -->
+                            <div class="relative">
+                                <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="oldPassword">old password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                                <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="oldPassword" placeholder="********">
+                            </div>
+                            <!-- New Password -->
+                            <div class="relative">
+                                <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="newPassword">new password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                                <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="newPassword" placeholder="********">
+                            </div>
+                            <!-- Confirm Password -->
+                            <div class="relative">
+                                <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="confirmPassword">confirm password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                                <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="confirmPassword" placeholder="********">
+                            </div>
+                        </div>
                     </div>
-                    <!-- New Password -->
-                    <div class="relative">
-                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="newPassword">new password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
-                        <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="newPassword" placeholder="********">
+                    
+                    <!-- Update Profile Button -->
+                    <div class="w-full mt-8 shadow-xl">
+                        <button class="w-full py-3 bg-primary text-white font-bold rounded-md hover:bg-red-600 transition duration-200 ease-in-out">Update Profile</button>
                     </div>
-                    <!-- Confirm Password -->
-                    <div class="relative">
-                        <span class="absolute left-2 -top-[12px] bg-white  text-greyfont text-sm font-semibold px-1" for="confirmPassword">confirm password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
-                        <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary" type="password" id="confirmPassword" placeholder="********">
-                    </div>
-                </div>
+
+                </div> 
+                <!-- Detail Setting - End --> 
             </div>
-            
-            <!-- Update Profile Button -->
-            <div class="w-full mt-8 shadow-xl">
-                <button class="w-full py-3 bg-primary text-white font-bold rounded-md hover:bg-red-600 transition duration-200 ease-in-out">Update Profile</button>
-            </div>
-
-        </div> 
-        <!-- Detail Setting - End --> 
-</div>
-<!-- Main Content - End -->
+            <!-- Main Content - End -->
 
 
 
 
         </div>
-        <script src="../../src/js/detailrecipe.js"></script>
-
+        <script src="../../src/js/settings.js"></script>
+        <script src="../../src/js/theme.js"></script>
     </body>
 </html>
