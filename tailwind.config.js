@@ -12,7 +12,8 @@ module.exports = {
                 darkPrimary: '#C13536',
                 secondary: '#1F272D',
                 greybg: '#D9D9D9',
-                greyfont: '#6A6A6A'
+                greyfont: '#6A6A6A',
+                profilebtn: '#3C2F2F'
             },
             fontFamily: {
                 Inter: ['Inter', 'sans-serif']
