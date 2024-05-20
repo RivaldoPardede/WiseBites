@@ -1,4 +1,3 @@
-    // Sidebar toggle 
 document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.getElementById("sidebar");
     const mainContent = document.getElementById("mainContent");
@@ -31,26 +30,5 @@ document.addEventListener("DOMContentLoaded", function () {
         mainContent.classList.toggle("lg:ml-56");
         toggleIcon.classList.toggle("fa-chevron-right");
         toggleIcon.classList.toggle("fa-chevron-left");
-    });
-
-    // Estimation popup 
-    const showEstimationBtn = document.getElementById('showEstimationBtn');
-    const estimationPopup = document.getElementById('Estimation');
-    const closeEstimationBtn = document.getElementById('closeEstimationBtn');
-
-    showEstimationBtn.addEventListener('click', function() {
-        estimationPopup.classList.remove('hidden');
-        estimationPopup.classList.add('flex')
-    });
-
-    closeEstimationBtn.addEventListener('click', function() {
-        estimationPopup.classList.add('hidden');
-        estimationPopup.classList.remove('flex');
-    });
-
-    window.addEventListener('click', function(event) {
-        if (event.target === estimationPopup) {
-            estimationPopup.classList.add('hidden');
-        }
     });
 });
