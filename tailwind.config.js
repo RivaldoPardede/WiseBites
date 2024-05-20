@@ -1,10 +1,15 @@
+const autoprefixer = require("autoprefixer");
+
 module.exports = {
-    content: ['./public/**/*.{html,js,php}'],
+    content: [
+        './public/**/*.{html,js,php}',
+    ],
     darkMode: "class",
     theme: {
         extend: {
             colors: {
                 primary: '#F14647',
+                darkPrimary: '#C13536',
                 secondary: '#1F272D',
                 greybg: '#D9D9D9',
                 greyfont: '#6A6A6A',
@@ -16,6 +21,7 @@ module.exports = {
         },
     },
     plugins: [
+        autoprefixer,
         function({ addComponents }) {
             addComponents({
             '.custom-list-decimal': {

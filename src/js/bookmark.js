@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainContent = document.getElementById("mainContent");
     const toggleButton = document.getElementById("toggleButton");
     const toggleIcon = document.getElementById("toggleIcon");
-    const filterButton = document.getElementById("filterButton");
 
     function updateSidebarState() {
         if (window.innerWidth >= 768) {
@@ -20,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleIcon.classList.add("fa-chevron-right");
         }
     }
+
     updateSidebarState();
 
     window.addEventListener("resize", updateSidebarState);
@@ -27,35 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleButton.addEventListener("click", () => {
         sidebar.classList.toggle("open");
         sidebar.classList.toggle("close");
-
         mainContent.classList.toggle("lg:ml-56");
         toggleIcon.classList.toggle("fa-chevron-right");
         toggleIcon.classList.toggle("fa-chevron-left");
     });
-
-    filterButton.addEventListener("click", () => {
-        sidebar.classList.add("close");
-        mainContent.classList.remove("lg:ml-56");
-    })
 });
-
-let modal = document.getElementById("modal");
-
-function modalHandler(show) {
-    show ? fade(modal, 1, "flex") : fade(modal, 0, "none");
-}
-
-function fade(el, targetOpacity, display) {
-    el.style.opacity = targetOpacity ? 0 : 1;
-    el.style.display = display || el.style.display;
-    (function animate() {
-        let opacity = parseFloat(el.style.opacity);
-        let increment = targetOpacity ? 0.2 : -0.1;
-        if ((targetOpacity && opacity < 1) || (!targetOpacity && opacity > 0)) {
-            el.style.opacity = opacity + increment;
-            requestAnimationFrame(animate);
-        } else if (!targetOpacity) {
-            el.style.display = display;
-        }
-    })();
-}
