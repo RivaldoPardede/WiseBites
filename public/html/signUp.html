@@ -87,7 +87,7 @@
                             </div>
     
                             <div class="relative h-11 w-full min-w-[200px]">
-                                <input placeholder="" type="password" class="peer h-full w-full border-b border-slate-200 bg-transparent pt-4 pb-3 font-sans text-sm 
+                                <input placeholder="" type="password" id="myPasswordInput" class="peer h-full w-full border-b border-slate-200 bg-transparent pt-4 pb-3 font-sans text-sm 
                                 font-normal text-slate-700 outline outline-0 transition-all placeholder-shown:border-slate-200 
                                 focus:border-slate-500 focus:outline-0 disabled:border-0 disabled:bg-slate-50 placeholder:opacity-0 
                                 focus:placeholder:opacity-100"/>
@@ -98,16 +98,19 @@
                                 peer-placeholder-shown:text-slate-500 peer-focus:text-[13px] peer-focus:leading-tight peer-focus:text-slate-800 
                                 peer-focus:after:scale-x-100 peer-focus:after:border-slate-800 peer-disabled:text-transparent 
                                 peer-disabled:peer-placeholder-shown:text-slate-500">Password</label>
+                                <button id="hideShowPW" type="button" class="absolute top-0 end-0 p-3.5 rounded-e-md hs-password-active">
+                                    <i id="hsPWicon" class="fa-regular fa-eye-slash text-slate-500"></i>
+                                </button>
                             </div>
 
                             <div class="">
-                                <button type="submit" class="relative h-11 w-full inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group shadow-xl shadow-primary/50">
-                                    <span class="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-                                    <span class="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-                                    </span>
-                                    <span class="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-                                    <span class="relative w-full text-center text-white transition-colors duration-200 ease-in-out group-hover:text-white">Create Account</span>
-                                <button/>
+                                <button class="px-5 py-2.5 relative rounded group w-full text-white font-medium inline-block">
+                                    <span class="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-darkPrimary to-primary"></span>
+                                    <span class="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-darkPrimary to-primary"></span>
+                                    <span class="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-darkPrimary to-primary"></span>
+                                    <span class="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-darkPrimary from-primary"></span>
+                                    <span class="relative">Sign Up</span>
+                                <button>
                             </div>
                         </div>
                         
@@ -122,5 +125,7 @@
                 </div>
             </div>
         </div>
+
+        <script src="/src/js/HideShowPW.js"></script>
     </body>
 </html>
