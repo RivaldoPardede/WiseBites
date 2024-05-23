@@ -11,28 +11,28 @@
                 <ul class="flex flex-col items-center py-4 gap-5">
                     <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
                         <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                        <a href="dashboard.html" class="w-[125px] flex flex-row items-center h-12  text-white">
+                        <a href="dashboard" class="w-[125px] flex flex-row items-center h-12  text-white">
                             <span class="inline-flex  items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-house"></i></span>
                             <span class="text-sm font-medium">Dashboard</span>
                         </a>
                     </li>
                     <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
                         <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                        <a href="profile.html" class="w-[125px] flex flex-row items-center h-12  text-white">
+                        <a href="/profile" class="w-[125px] flex flex-row items-center h-12  text-white">
                             <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-user"></i></i></span>
                             <span class="text-sm font-medium">Profile</span>
                         </a>
                     </li>
                     <li class="flex flex-row relative:opacity-100 translate-x-2">
                         <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                        <a href="bookmark.html" class="w-[125px] flex flex-row items-center h-12  text-white">
+                        <a href="/bookmark" class="w-[125px] flex flex-row items-center h-12  text-white">
                             <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-bookmark"></i></span>
                             <span class="text-sm font-medium">Bookmark</span>
                         </a>
                     </li>
                     <li class="flex flex-row opacity-[50%] relative hover:opacity-100 transform hover:translate-x-2 transition-transform ease-in duration-200">
                         <span class="bg-white w-[5px] rounded-r-full relative left-[-55px]"></span>
-                        <a href="setting.html" class="w-[125px] flex flex-row items-center h-12  text-white">
+                        <a href="/setting" class="w-[125px] flex flex-row items-center h-12  text-white">
                             <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px]"><i class="fa-solid fa-gear"></i></span>
                             <span class="text-sm font-medium">Settings</span>
                         </a>
@@ -41,7 +41,7 @@
                 <div id="logOut-btn" class="flex flex-col items-center py-4">
                     <ul class="flex flex-col items-center py-4">
                         <li class="w-[125px]">
-                            <a href="../index.html" class="flex absolute bottom-5 flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white opacity-[50%] hover:opacity-100">
+                            <a href="/" class="flex absolute bottom-5 flex-row items-center h-12 transform hover:translate-x-2 transition-transform ease-in duration-200 text-white opacity-[50%] hover:opacity-100">
                                 <span class="inline-flex items-center h-12 w-12 text-lg mr-[-15px] "><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
                                 <span class="text-sm font-medium">Log Out</span>
                             </a>
