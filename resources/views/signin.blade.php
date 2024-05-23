@@ -1,4 +1,5 @@
 <x-main>
+    <x-slot:title>{{  $title  }}</x-slot:title>
     <div class="flex h-screen">
         <!-- Left Page -->
         <div class="w-full lg:w-1/2 flex items-center justify-center">
@@ -30,11 +31,11 @@
                     <p> - OR - </p>
                 </div>
 
-                <form action="#" method="POST" class="space-y-4">
+                <form action="/signin" method="POST" class="space-y-4">
+                    @csrf
                     <div class="flex flex-col gap-8">
-
                         <div class="relative h-11 w-full min-w-[200px]">
-                            <input type="email" placeholder="JohnDoe@gmail.com" class="peer h-full w-full border-b border-slate-200 bg-transparent pt-4 pb-3 font-sans text-sm 
+                            <input type="email" name="email" id="email" required placeholder="JohnDoe@gmail.com" class="peer h-full w-full border-b border-slate-200 bg-transparent pt-4 pb-3 font-sans text-sm 
                             font-normal text-slate-700 outline outline-0 transition-all placeholder-shown:border-slate-200 
                             focus:border-slate-500 focus:outline-0 disabled:border-0 disabled:bg-slate-50 placeholder:opacity-0 
                             focus:placeholder:opacity-100"/>
@@ -48,7 +49,7 @@
                         </div>
 
                         <div class="relative h-11 w-full min-w-[200px]">
-                            <input placeholder="" type="password" class="peer h-full w-full border-b border-slate-200 bg-transparent pt-4 pb-3 font-sans text-sm 
+                            <input placeholder="" type="password" name="password" id="password" required class="peer h-full w-full border-b border-slate-200 bg-transparent pt-4 pb-3 font-sans text-sm 
                             font-normal text-slate-700 outline outline-0 transition-all placeholder-shown:border-slate-200 
                             focus:border-slate-500 focus:outline-0 disabled:border-0 disabled:bg-slate-50 placeholder:opacity-0 
                             focus:placeholder:opacity-100"/>
