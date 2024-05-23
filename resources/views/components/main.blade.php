@@ -13,12 +13,11 @@
         <!-- link ke icon fontAwesome -->
         <script src="https://kit.fontawesome.com/4fcf61398f.js" crossorigin="anonymous"></script>
         <title>{{  $title  }}</title>
+        <script defer src="./js/dashboard.js"></script>
+        <script defer src="./js/theme.js"></script>
         @vite('resources/js/app.js')
     </head>
     <body class="font-Inter">
         {{  $slot  }}
-
-        <script src="./js/dashboard.js"></script>
-        <script src="./js/theme.js"></script>
     </body>
 </html>

@@ -88,52 +88,55 @@
 
             <!-- Detail Setting - Start -->
             <div class="flex flex-col justify-items-center mx-auto mt-12 mb-5 w-[80%] py-12 px-10 rounded-lg bg-white dark:bg-slate-900">
-                <div class="flex flex-col lg:flex-row">
-                    <div class="flex flex-col w-full lg:w-1/2 space-y-4">
-                        <!-- Name -->
-                        <div class="relative">
-                            <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg dark:bg-gray-800 dark:text-white" type="text" id="name" value="" placeholder="Lisa Nobara">
-                            <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900  text-sm font-semibold px-1" for="name">Name</span>
+                <form action="/setting" method="post">
+                    @csrf
+                    <div class="flex flex-col lg:flex-row">
+                        <div class="flex flex-col w-full lg:w-1/2 space-y-4">
+                            <!-- Name -->
+                            <div class="relative">
+                                <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg dark:bg-gray-800 dark:text-white" type="text" id="name" value="{{  $user->name  }}">
+                                <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900  text-sm font-semibold px-1" for="name">Name</span>
+                            </div>
+                            <!-- Email -->
+                            <div class="relative">
+                                <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg dark:bg-gray-800 dark:text-gray-300" type="text" id="email" value="{{  $user->email  }}">
+                                <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="email">Email</span>
+                            </div>
+                            <!-- Profile Picture -->
+                            <div class="relative">
+                                <label for="profilePicture" class="absolute left-3 -top-2 bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1">Profile picture</label>
+                                <label class="block w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer dark:bg-gray-800 dark:text-gray-300" for="profilePicture">
+                                    <i class="fa-solid fa-file-arrow-up text-gray-500 dark:text-gray-300"></i>
+                                    <span class="text-gray-500 dark:text-gray-300 font-medium ml-2">Upload file</span>
+                                </label>
+                                <input class="hidden" type="file" id="profilePicture">
+                            </div>
                         </div>
-                        <!-- Email -->
-                        <div class="relative">
-                            <input class="w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary font-semibold text-lg dark:bg-gray-800 dark:text-gray-300" type="text" id="email" value="" placeholder="lisamanoban@gmail.com">
-                            <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="email">Email</span>
-                        </div>
-                        <!-- Profile Picture -->
-                        <div class="relative">
-                            <label for="profilePicture" class="absolute left-3 -top-2 bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1">Profile picture</label>
-                            <label class="block w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer dark:bg-gray-800 dark:text-gray-300" for="profilePicture">
-                                <i class="fa-solid fa-file-arrow-up text-gray-500 dark:text-gray-300"></i>
-                                <span class="text-gray-500 dark:text-gray-300 font-medium ml-2">Upload file.</span>
-                            </label>
-                            <input class="hidden" type="file" id="profilePicture">
+    
+                        <div class="flex flex-col w-full lg:w-1/2 space-y-4 lg:ml-8 mt-4 lg:mt-0">
+                            <!-- Old Password -->
+                            <div class="relative">
+                                <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="oldPassword">Old password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                                <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-gray-300" type="password" name="oldPassword" id="oldPassword" placeholder="********">
+                            </div>
+                            <!-- New Password -->
+                            <div class="relative">
+                                <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="newPassword">New password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                                <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-gray-300" type="password" name="newPassword" id="newPassword" placeholder="********">
+                            </div>
+                            <!-- Confirm Password -->
+                            <div class="relative">
+                                <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="confirmPassword">Confirm password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
+                                <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-gray-300" type="password" name="confirmPassword" id="confirmPassword" placeholder="********">
+                            </div>
                         </div>
                     </div>
-
-                    <div class="flex flex-col w-full lg:w-1/2 space-y-4 lg:ml-8 mt-4 lg:mt-0">
-                        <!-- Old Password -->
-                        <div class="relative">
-                            <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="oldPassword">Old password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
-                            <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-gray-300" type="password" id="oldPassword" placeholder="********">
-                        </div>
-                        <!-- New Password -->
-                        <div class="relative">
-                            <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="newPassword">New password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
-                            <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-gray-300" type="password" id="newPassword" placeholder="********">
-                        </div>
-                        <!-- Confirm Password -->
-                        <div class="relative">
-                            <span class="absolute left-2 -top-[12px] bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1" for="confirmPassword">Confirm password <i class="fa-solid fa-lock ml-1 text-[12px]"></i></span>
-                            <input class="w-full px-7 py-6 border rounded-md text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-800 dark:text-gray-300" type="password" id="confirmPassword" placeholder="********">
-                        </div>
+                    
+                    <!-- Update Profile Button -->
+                    <div class="w-full mt-8 shadow-xl">
+                        <button type="submit" class="w-full py-3 bg-primary text-white font-bold rounded-md hover:bg-red-600 transition duration-200 ease-in-out">Update Profile</button>
                     </div>
-                </div>
-                
-                <!-- Update Profile Button -->
-                <div class="w-full mt-8 shadow-xl">
-                    <button class="w-full py-3 bg-primary text-white font-bold rounded-md hover:bg-red-600 transition duration-200 ease-in-out">Update Profile</button>
-                </div>
+                </form>
                 <!-- Detail Setting - End --> 
             </div>
             <!-- Detail Setting - End -->

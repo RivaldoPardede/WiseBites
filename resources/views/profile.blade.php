@@ -92,8 +92,8 @@
                     <img class="w-full h-full" src="../assets/png/profile_img.png" alt="Photo_profile">
                 </div>
                 <div class="text-center mt-4 mb-12">
-                    <div class="text-xl font-semibold dark:text-gray-300" id="name">Lisa Nobadan</div>
-                    <div class="text-lg text-gray-600 dark:text-gray-300" id="email">lisanobandan@gmail.com</div>
+                    <div class="text-xl font-semibold dark:text-gray-300" id="name">{{  $user->name  }}</div>
+                    <div class="text-lg text-gray-600 dark:text-gray-300" id="email">{{  $user->email  }}</div>
                 </div>
                 <button class="bg-profilebtn rounded-xl mx-auto py-3 px-6 text-white font-medium drop-shadow-xl hover:bg-secondary flex items-center">
                     <span>Update Profile</span>
