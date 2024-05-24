@@ -7,7 +7,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\VerifyEmailController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,14 +29,14 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/signup', [RegisterController::class, 'index']);
 Route::post('/signup', [RegisterController::class, 'store']);
 
+Route::get('/email/verify', [VerifyEmailController::class, 'verify'])->name('verification.verify');
+
 Route::get('/signin', [LoginController::class, 'index']);
 Route::post('/signin', [LoginController::class, 'authenticate']);
 
-Route::get('/forgetPassword', function () {
-    return view('resetPassword', [
-        'title' => 'Reset Password'
-    ]);
-});
+Route::get('/forgetPassword', [ResetPasswordController::class, 'index'])->middleware('guest')->name('password.request');
+
+Route::post('/forgot-password', [ResetPasswordController::class, 'reset'])->middleware('guest')->name('password.email');
 
 Route::get('/auth/redirect', [GoogleLoginController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleLoginController::class, 'callback']);
@@ -50,10 +53,4 @@ Route::middleware('isLoggedIn')->group(function () {
     Route::get('/setting', [SettingController::class, 'index']);
     Route::post('/setting', [SettingController::class, 'update']);
     Route::get('/logout', [LoginController::class, 'logout']);
-});
-
-Route::get('/tes', function () {
-    return view('emailVerification', [
-        'title' => 'tes'
-    ]);
 });

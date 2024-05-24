@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\VerifyEmail;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -22,9 +27,20 @@ class RegisterController extends Controller
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['email_verification_token'] = Str::random(60);
 
-        User::create($validatedData);
+        $user = User::create($validatedData);
 
-        return redirect('/signin');
+        Mail::to($user->email)->send(new VerifyEmail($user));
+
+        return 'ok';
+
+        // return redirect('/email/verify');
     }
+
+    // public function sendVerifyToken() {
+
+    // }
+
+    // public function 
 }

@@ -26,12 +26,8 @@ class SettingController extends Controller
             'profilePicture' => 'file|max:2048',
         ]);
         
-        if($request->file('image')) {
-            if($request->oldImage) {
-                Storage::delete($request->oldImage);
-            }
-
-            $validatedData['image'] = $request->file('image')->store('profile-images');
+        if($request->file('profilePicture')) {
+            $validatedData['profilePicture'] = $request->file('profilePicture')->store('images');
         }
 
         User::where('id', $user->id)->update($validatedData);

@@ -89,7 +89,7 @@
             <!-- Detail Content - Start -->
             <div class="flex flex-col justify-items-center mx-auto mt-12 mb-5 w-[80%] py-12 px-10 rounded-lg bg-white dark:bg-slate-900">
                 <div class="w-36 h-36 mx-auto">
-                    <img class="w-full h-full" src="../assets/png/profile_img.png" alt="Photo_profile">
+                    <img class="w-full h-full" src="{{  asset("storage/$user->profilePicture")  }}" alt="Photo_profile">
                 </div>
                 <div class="text-center mt-4 mb-12">
                     <div class="text-xl font-semibold dark:text-gray-300" id="name">{{  $user->name  }}</div>
