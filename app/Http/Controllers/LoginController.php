@@ -25,6 +25,8 @@ class LoginController extends Controller
 
             return redirect('/dashboard');
         }
+
+        return back()->with('LoginError', 'Username or Password is incorrect');
     }
 
     public function logout(Request $request) {

@@ -20,30 +20,19 @@ class SettingController extends Controller
     public function update(Request $request) {
         $user = auth()->user();
 
-        if($user->password != $request['oldPassword']) {
-            return redirect()->back();
-        }
-
-        if($request['newPassword'] != $request['confirmPassword']) {
-            return redirect()->back();
-        }
-
-        $validateData = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email:dns|unique:users',
-            'image' => 'file|max:2048',
-            'password' => 'required|min:5|max:255|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/'
+            'email' => 'required|email:dns',
+            'profilePicture' => 'file|max:2048',
         ]);
-
+        
         if($request->file('image')) {
             if($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
 
-            $validatedData['image'] = $request->file('image')->store('post-images');
+            $validatedData['image'] = $request->file('image')->store('profile-images');
         }
-
-        dd($request);
 
         User::where('id', $user->id)->update($validatedData);
 

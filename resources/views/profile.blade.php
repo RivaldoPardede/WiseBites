@@ -95,12 +95,12 @@
                     <div class="text-xl font-semibold dark:text-gray-300" id="name">{{  $user->name  }}</div>
                     <div class="text-lg text-gray-600 dark:text-gray-300" id="email">{{  $user->email  }}</div>
                 </div>
-                <button class="bg-profilebtn rounded-xl mx-auto py-3 px-6 text-white font-medium drop-shadow-xl hover:bg-secondary flex items-center">
+                <a href="/setting" class="bg-profilebtn rounded-xl mx-auto py-3 px-6 text-white font-medium drop-shadow-xl hover:bg-secondary flex items-center">
                     <span>Update Profile</span>
                     <i class="fa-regular fa-pen-to-square ml-3"></i>
-                </button>
+                </a>
                 <div class="text-center mt-14 opacity-50 hover:opacity-100 hover:text-secondary">
-                    <a href="bookmark.html" class="text-gray-600 dark:text-gray-300 flex items-center justify-center">
+                    <a href="/bookmark" class="text-gray-600 dark:text-gray-300 flex items-center justify-center">
                         <span class="text-lg font-medium">Bookmark List</span>
                         <span class="ml-3 font-semibold">&gt;</span>
                     </a>

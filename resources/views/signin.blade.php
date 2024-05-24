@@ -63,8 +63,13 @@
                         </div>
                         
                         <div class="text-sm text-slate-400 text-center">
-                            <a href="#" class="text-slate-700 hover:text-primary hover:underline transition duration-300">Forget Password?</a>
+                            <a href="/forgetPassword" class="text-slate-700 hover:text-primary hover:underline transition duration-300">Forget Password?</a>
                         </div>
+
+                        
+                        @if (session()->has('LoginError'))
+                            <p class="text-red-500">{{ session('LoginError') }}</p>
+                        @endif
 
                         <div class="">
                             <button type="submit" class="relative h-11 w-full inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group shadow-xl shadow-primary/50">
@@ -76,7 +81,6 @@
                             </button>
                         </div>
                     </div>
-                    
                 </form>
 
                 <div class="mt-7 text-sm text-slate-400 text-center">
