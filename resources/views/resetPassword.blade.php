@@ -15,7 +15,7 @@
             <div class="max-w-sm w-full px-8 shadow-2xl drop-shadow-lg rounded-lg">
                 <img src="../assets/svg/Logo.svg" class="mx-auto pt-10 w-20" alt="">
                 <h1 class="mb-2 text-center pb-10 text-xl font-semibold text-gray-900">Reset your password</h1>
-                <form action="{{ route('password.email') }}" method="POST" class="w-full pb-10">
+                <form action="" method="POST" class="w-full pb-10">
                     @csrf
                     <div class="mb-5 relative">
                         <label for="email-address" class="block text-sm font-semibold leading-6 text-gray-900">Email address</label>
@@ -35,13 +35,13 @@
                         shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-slate-800 ring-1 
                         ring-slate-200" required="" autofocus="" value="">
                     </div>
-                    <button type="submit" class="py-2.5 px-4 relative rounded-lg group w-full text-white font-semibold mt-6 inline-block text-sm">
+                    <a href="" class="py-2.5 px-4 relative rounded-lg group w-full text-white font-semibold mt-6 inline-block text-sm text-center">
                         <span class="absolute top-0 left-0 w-full h-full rounded opacity-50 filter blur-sm bg-gradient-to-br from-darkPrimary to-primary"></span>
                         <span class="h-full w-full inset-0 absolute mt-0.5 ml-0.5 bg-gradient-to-br filter group-active:opacity-0 rounded opacity-50 from-darkPrimary to-primary"></span>
                         <span class="absolute inset-0 w-full h-full transition-all duration-200 ease-out rounded shadow-xl bg-gradient-to-br filter group-active:opacity-0 group-hover:blur-sm from-darkPrimary to-primary"></span>
                         <span class="absolute inset-0 w-full h-full transition duration-200 ease-out rounded bg-gradient-to-br to-darkPrimary from-primary"></span>
                         <span class="relative">Reset Password</span>
-                    <button>
+                    <a>
                 </form>
             </div>
         </div>

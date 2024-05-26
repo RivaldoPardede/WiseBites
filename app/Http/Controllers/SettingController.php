@@ -23,11 +23,11 @@ class SettingController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|email:dns',
-            'profilePicture' => 'file|max:2048',
+            'profile_picture' => 'file|max:2048',
         ]);
         
-        if($request->file('profilePicture')) {
-            $validatedData['profilePicture'] = $request->file('profilePicture')->store('images');
+        if($request->file('profile_picture')) {
+            $validatedData['profile_picture'] = $request->file('profile_picture')->store('images');
         }
 
         User::where('id', $user->id)->update($validatedData);

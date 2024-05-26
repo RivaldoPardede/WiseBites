@@ -33,14 +33,6 @@ class RegisterController extends Controller
 
         Mail::to($user->email)->send(new VerifyEmail($user));
 
-        return 'ok';
-
-        // return redirect('/email/verify');
+        return view('verify', ['title' => 'Confirm Email']);
     }
-
-    // public function sendVerifyToken() {
-
-    // }
-
-    // public function 
 }

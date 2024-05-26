@@ -1,5 +1,5 @@
 <x-main>
-    <x-slot:title>{{  $title  }}</x-slot:title>
+    <x-slot:title>Dashboard</x-slot:title>
     
     <div class="min-h-screen w-full flex flex-row bg-white dark:bg-slate-800 transition duration-300 ease-in-out">
         <!-- Sidebar - Start -->
@@ -230,9 +230,9 @@
                 
                 <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
-                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                        <img src="{{ $response['image']  }}" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
                         <div class="px-4 py-3">
-                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">{{  $response['title']  }}</p>
                             <div class="flex items-center mt-2">
                                 <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
                                 <div class="ml-auto">

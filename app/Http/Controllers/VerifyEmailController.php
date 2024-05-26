@@ -11,10 +11,6 @@ use Illuminate\Support\Facades\Validator;
 class VerifyEmailController extends Controller
 {
     public function verify(Request $request) {
-        // $request->validate([
-        //     'token' => 'required',
-        // ]);
-
         $validator = Validator::make($request->all(), ['token' => 'required']);
 
         if($validator->fails()) {

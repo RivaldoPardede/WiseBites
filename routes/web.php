@@ -6,11 +6,11 @@ use App\Http\Controllers\GoogleLoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RecipeController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPasswordController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\VerifyEmailController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,15 +34,13 @@ Route::get('/email/verify', [VerifyEmailController::class, 'verify'])->name('ver
 Route::get('/signin', [LoginController::class, 'index']);
 Route::post('/signin', [LoginController::class, 'authenticate']);
 
-Route::get('/forgetPassword', [ResetPasswordController::class, 'index'])->middleware('guest')->name('password.request');
-
-Route::post('/forgot-password', [ResetPasswordController::class, 'reset'])->middleware('guest')->name('password.email');
+Route::get('/forgetPassword', [ResetPasswordController::class, 'index']);
 
 Route::get('/auth/redirect', [GoogleLoginController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleLoginController::class, 'callback']);
 
 Route::middleware('isLoggedIn')->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard/{id}', [RecipeController::class, 'getMenuItem']);
     Route::get('/bookmark', [BookmarkController::class, 'index']);
     Route::get('/detail', function () {
         return view('detailrecipe', [
@@ -54,3 +52,5 @@ Route::middleware('isLoggedIn')->group(function () {
     Route::post('/setting', [SettingController::class, 'update']);
     Route::get('/logout', [LoginController::class, 'logout']);
 });
+
+Route::get('/menu-item/{id}', [RecipeController::class, 'getMenuItem']);

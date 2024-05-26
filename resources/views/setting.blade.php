@@ -104,12 +104,12 @@
                             </div>
                             <!-- Profile Picture -->
                             <div class="relative">
-                                <label for="profilePicture" class="absolute left-3 -top-2 bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1">Profile picture</label>
-                                <label class="block w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer dark:bg-gray-800 dark:text-gray-300" for="profilePicture">
+                                <label for="profile_picture" class="absolute left-3 -top-2 bg-white text-gray-500 dark:text-gray-300 dark:bg-slate-900 text-sm font-semibold px-1">Profile picture</label>
+                                <label class="block w-full px-7 py-6 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer dark:bg-gray-800 dark:text-gray-300" for="profile_picture">
                                     <i class="fa-solid fa-file-arrow-up text-gray-500 dark:text-gray-300"></i>
                                     <span class="text-gray-500 dark:text-gray-300 font-medium ml-2">Upload file</span>
                                 </label>
-                                <input class="hidden" type="file" id="profilePicture" name="profilePicture">
+                                <input class="hidden" type="file" id="profile_picture" name="profile_picture">
                             </div>
                         </div>
                     </div>
