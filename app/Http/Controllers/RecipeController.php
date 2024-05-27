@@ -8,32 +8,19 @@ use Illuminate\Support\Facades\Log;
 
 class RecipeController extends Controller
 {
-    protected static $apiKey = 'SDffcqAC9r8uiYRBKbXAZ8dAn7eBMWqi';
+    public function index(Request $request, $id) {
+        $url = "https://api.spoonacular.com/recipes/" . $id . "/information?apiKey=716b37cbec294367809b172ced28dcb2";
+        
+        $response = Http::get($url);
 
-    public function getMenuItem($id)
-    {
-        $url = "https://api.apilayer.com/spoonacular/food/menuItems/{$id}";
+        if($response->successful()) {
+            $response = $response->json();
 
-        $response = Http::withHeaders([
-            'Content-Type' => 'text/plain',
-            'apikey' => self::$apiKey,
-        ])->get($url);
-
-        Log::info('API Request', [
-            'url' => $url,
-            'status' => $response->status(),
-            'response' => $response->body()
-        ]);
-
-        if ($response->successful()) {
-            return view('dashboard', [
-                'response' => $response
+            return view('detailrecipe', [
+                'title' => 'Detail Recipe',
+                'recipe' => $response,
             ]);
-        } else {
-            return response()->json([
-                'error' => 'Unable to fetch menu item',
-                'status' => $response->status()
-            ], $response->status());
         }
+        dd($response);
     }
 }

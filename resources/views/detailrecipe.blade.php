@@ -91,8 +91,8 @@
                     <!-- Menu Detail - Start -->
                     <div class="flex-shrink-0 dark:text-gray-300">
                         <img src="../assets/png/food1.jpg" alt="Italian Chicken Salad" class="rounded-2xl w-full max-w-lg h-full max-h-[470px] px-6 mb-8">
-                        <h1 class="text-[32px] mb-3 px-6">Italian Chicken Salad</h1>
-                        <p class="text-[32px] font-semibold text-secondary dark:text-gray-300 mb-3.5 px-6">Rp. 20k</p>
+                        <h1 class="text-[32px] mb-3 px-6">{{ $recipe['title'] }}</h1>
+                        <p class="text-[32px] font-semibold text-secondary dark:text-gray-300 mb-3.5 px-6">{{ $recipe['pricePerServing']}}</p>
                         <div class="flex gap-x-16 ml-8 lg:ml-72 mb-5">
                             <button id="showEstimationBtn" class="rounded-2xl shadow-sm lg:shadow-2xl shadow-black py-1 px-4 hover:bg-primary hover:text-white transition duration-200 ease-in">
                                 <span class="text-[12px] font-semibold">Estimate Price</span>
@@ -112,7 +112,7 @@
                             <div class="py-10 px-10 ">
                                 <p class="text-greyfont dark:text-gray-300 text-2xl font-semibold text-center ">Description</p>
                                 <p class="text-greyfont dark:text-gray-300 text-xl pt-5">
-                                    Salad is a healthy and refreshing meal that is rich in vitamins, minerals, and fiber. It is also low in calories and fat, making it a great choice for a healthy diet.
+                                    {!! $recipe['summary'] !!}
                                 </p>
                             </div>
                         </div>
@@ -128,17 +128,9 @@
                     <div class="bg-greybg dark:bg-secondary rounded-xl px-11 py-9">
                         <h2 class="text-2xl font-semibold text-center text-greyfont dark:text-gray-300 pb-9">Ingredients</h2>
                         <ol class="custom-disc list-inside text-greyfont dark:text-gray-300 grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-2">
-                            <li>50gr Lettuce</li>
-                            <li>10gr Purple cabbage</li>
-                            <li>10gr Cucumber</li>
-                            <li>10gr Tomato</li>
-                            <li>10gr Edamame</li>
-                            <li>100gr Grilled chicken</li>
-                            <li>20gr Boiled Corn</li>
-                            <li>20gr Boiled Corn</li>
-                            <li>20gr Boiled Corn</li>
-                            <li>20gr Boiled Corn</li>
-                            <li>20gr Boiled Corn</li>
+                            @foreach ($recipe['extendedIngredients'] as $ingredient)
+                                <li>{{ $ingredient['measures']['metric']['amount']}} {{ $ingredient['measures']['metric']['unitShort'] }} {{ $ingredient['name'] }}</li>
+                            @endforeach
                         </ol>
                     </div>
                     <!-- Ingredients - End -->

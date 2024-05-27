@@ -17,16 +17,10 @@
                 <h1 class="mb-2 text-center pb-10 text-xl font-semibold text-gray-900">Reset your password</h1>
                 <form action="{{ route('password.update') }}" method="POST" class="w-full pb-10">
                     @csrf
-                    <input type="hidden" name="token" value="{{ auth()->user()->email_verification_token }}">
+                    <input type="hidden" name="token">
                     <div class="mb-5 relative">
-                        <label for="password" class="block text-sm font-semibold leading-6 text-gray-900">New Password</label>
-                        <input type="password" name="new-password" id="new-password" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 
-                        shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-slate-800 ring-1 
-                        ring-slate-200" required="" autofocus="" value="">
-                    </div>
-                    <div class="relative">
-                        <label for="confirm-password" class="block text-sm font-semibold leading-6 text-gray-900">Confirm Password</label>
-                        <input type="password" name="confirm-password" id="confirm-password" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 
+                        <label for="email-address" class="block text-sm font-semibold leading-6 text-gray-900">Email address</label>
+                        <input type="email" name="email" id="email-address" class="mt-2 appearance-none text-slate-900 bg-white rounded-md block w-full px-3 h-10 
                         shadow-sm sm:text-sm focus:outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-slate-800 ring-1 
                         ring-slate-200" required="" autofocus="" value="">
                     </div>

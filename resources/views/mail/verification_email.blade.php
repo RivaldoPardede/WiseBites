@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>Verify Your Email</h1>
-    <a href="http://localhost:8000/dashboard">Please click this to verify your email.</a>
+    <a href="http://localhost:8000/email/verify?token={{ $token }}">Please click this to verify your email.</a>
 </body>
 </html>

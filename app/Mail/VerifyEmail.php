@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -13,12 +14,13 @@ class VerifyEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    private $user;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(User $user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -39,7 +41,8 @@ class VerifyEmail extends Mailable
         return new Content(
             view: 'mail.verification_email',
             with:[
-                'title' => 'Verify Email'
+                'title' => 'Verify Email',
+                'token' => $this->user->email_verification_token,
             ]
         );
     }

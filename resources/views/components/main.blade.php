@@ -20,5 +20,31 @@
     </head>
     <body class="font-Inter">
         {{  $slot  }}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.menu-container #bookmark-menu-form').submit(function(e) {
+                    e.preventDefault();
+
+                    const formData = $(this).serialize();
+                    
+                    $.ajax({
+                        url: $(this).attr('action'),
+                        headers: {
+                            "X-CSRF-TOKEN": formData._token,
+                        },
+                        type: "POST",
+                        data: formData,
+                        success: function(response) {
+                            console.log(response);
+                            location.reload();
+                        },
+                        error: function(response) {
+                            console.log(response);
+                        },
+                    })
+                })
+            })
+        </script>
     </body>
 </html>

@@ -86,14 +86,14 @@
             <!-- Navbar - End -->
             
             <!-- SearchBar - Start -->
-            <form class="flex items-center my-10 max-w-xl mx-2 drop-shadow-md dark:shadow-slate-500 sm:mx-auto">   
+            <form action="{{ route('menu.index') }}" method="GET" class="flex items-center my-10 max-w-xl mx-2 drop-shadow-md dark:shadow-slate-500 sm:mx-auto" >   
                 <div class="relative w-full">
                     <div class="absolute inset-y-0 left-0 flex items-center text-greyfont pl-3 pointer-events-none">
                         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                         </svg>
                     </div>
-                    <input type="text" autocomplete="off" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search any recipe" required />
+                    <input type="text" name="search" id="search" autocomplete="off" id="simple-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search any recipe" required />
                 </div>
                 <button id="filterButton" type="button" onclick="modalHandler(true)" class="p-3 ml-4 text-base font-medium text-white bg-primary rounded-lg hover:bg-darkPrimary">
                     <img src="../assets/svg/filter.svg" alt="" class="w-6 h-6">
@@ -226,26 +226,40 @@
             <h1 class="text-slate-800 text-center dark:text-slate-200 text-lg font-bold tracking-normal leading-tight mb-4">All Available Recipes!</h1>
 
             <!-- Food Card - Start -->
-            <section class="w-full max-w-[1190px] px-6 py-3 mx-auto grid grid-cols-1 min-[500px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-y-20 gap-x-14 mt-10 mb-5">
-                
+            <section class="w-full max-w-[1190px] px-6 py-3 mx-auto grid grid-cols-1 min-[500px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-y-20 gap-x-14 mt-10 mb-5 menu-container">                
+                @foreach ($items as $item)
                 <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-                    <a href="#">
-                        <img src="{{ $response['image']  }}" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                    <a href="/detail/{{ $item['id'] }}">
+                        <img src="{{ $item['image']  }}" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
                         <div class="px-4 py-3">
-                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">{{  $response['title']  }}</p>
+                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">{{  $item['title']  }}</p>
                             <div class="flex items-center mt-2">
-                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
                                 <div class="ml-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
-                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
-                                </svg>
+                                    <form action="{{ route('bookmark_menu.store') }}" method="post" id="bookmark-menu-form">
+                                        @csrf
+                                        <input type="hidden" name="menu_id" value="{{ $item['id'] }}">
+                                        <button type="submit">
+                                        @if ($item['is_bookmark'])
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200 fill-primary" viewBox="0 0 384 512">
+                                                <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                            </svg>
+                                        @else 
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200" fill="none" stroke="currentColor" stroke-width="32" viewBox="0 0 384 512">
+                                                <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                            </svg>
+                                        
+                                        @endif
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
+                @endforeach
 
-                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+
+                {{-- <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
                         <div class="px-4 py-3">
@@ -362,7 +376,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
 
             </section>
             
