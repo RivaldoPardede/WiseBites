@@ -7,7 +7,7 @@
                 <h1 class="text-3xl font-extrabold mb-10 text-black text-center">Sign In To Your Account</h1>
 
                 <div class="mt-4 flex flex-col lg:flex-row items-center justify-between">
-                    <div class="w-full lg:w-1/2 mb-2 lg:mb-0">
+                <div class="w-full mb-2 lg:mb-0">
                         <a href="/auth/redirect" class="w-full p-3 flex justify-center items-center gap-2 bg-white text-[12px] text-gray-600 rounded-md hover:bg-gray-50 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200 transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5" id="google">
                                 <path fill="#fbbb00" d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z"></path>

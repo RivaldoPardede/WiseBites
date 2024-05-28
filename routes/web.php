@@ -37,12 +37,11 @@ Route::get('/email/verify', [VerifyEmailController::class, 'verify'])->name('ver
 Route::get('/signin', [LoginController::class, 'index']);
 Route::post('/signin', [LoginController::class, 'authenticate']);
 
-// Route::get('/forgetPassword', [ResetPasswordController::class, 'index']);
-Route::get('/forgetPassword', [ResetPasswordController::class, 'index'])->name('password.request');
-Route::post('/forgetPassword', [ResetPasswordController::class, 'sendResetLink'])->name('password.email');
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+Route::get('/forgetPassword', [ResetPasswordController::class, 'index']);
+Route::post('/forgetPassword', [ResetPasswordController::class, 'send_token'])->name('password.send_token');
 
+Route::get('/reset-password', [VerifyEmailController::class, 'show_reset_form'])->name('password.show_reset_form');
+Route::post('/reset-password', [VerifyEmailController::class, 'reset_password'])->name('password.reset_password');
 
 Route::get('/auth/redirect', [GoogleLoginController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleLoginController::class, 'callback']);
@@ -50,8 +49,8 @@ Route::get('/auth/google/callback', [GoogleLoginController::class, 'callback']);
 Route::middleware('isLoggedIn')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('menu.index');
 
+    Route::get('/bookmark', [BookmarkMenuController::class, 'index']);
     Route::post('/bookmark', [BookmarkMenuController::class, 'store'])->name('bookmark_menu.store');
-    Route::get('/bookmark', [BookmarkController::class, 'index']);
 
     Route::get('/detail/{id}', [RecipeController::class, 'index']);
 

@@ -21,6 +21,5 @@ class RecipeController extends Controller
                 'recipe' => $response,
             ]);
         }
-        dd($response);
     }
 }

@@ -107,14 +107,15 @@
                     <div class="relative py-8 px-5 md:px-10 bg-white dark:bg-slate-600 shadow-md rounded-2xl border border-gray-400">
                         <h1 class="text-gray-800 dark:text-slate-200 text-center font-lg font-bold tracking-normal leading-tight mb-4">Filter</h1>
                         
-                        <form id="filterForm">
+                        <form id="filterForm" action="{{ route('menu.index') }}" method="GET">
+                            @csrf
                             <hr class="py-3">
 
                             <!-- Bahan Makanan -->
                             <h2 class="text-md font-semibold mb-4 dark:text-slate-200">Choose your ingredients:</h2>
-                            <div class="grid grid-cols-4 gap-4 md:grid-cols-5 lg:grid-cols-7 min-h-[40px] mb-5">
-
-                                <label class="relative flex sm:max-w-[100px] md:max-w-[105px] lg-[120px] max-w-[94px] items-center justify-center sm:max-h-[50px] h-[40px] bg-secondary/50 peer-checked:bg-secondary hover:bg-secondary/80 transition-colors leading-6 py-2 rounded-2xl cursor-pointer">
+                            <div class="min-h-[40px] mb-5">
+                                    <input type="text" name="search_ingredients" id="search_ingredients" autocomplete="off" class="bg-gray-50 border border-gray-300 text-gray-900 text-base rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="If there are more than one value, please separate with space" />                                
+                                {{-- <label class="relative flex sm:max-w-[100px] md:max-w-[105px] lg-[120px] max-w-[94px] items-center justify-center sm:max-h-[50px] h-[40px] bg-secondary/50 peer-checked:bg-secondary hover:bg-secondary/80 transition-colors leading-6 py-2 rounded-2xl cursor-pointer">
                                     <input type="checkbox" name="ingredient" value="chicken" class="peer hidden">
                                     <div class="flex items-center justify-center sm:gap-2 gap-1 px-2 w-full h-[40px] bg-secondary/50 peer-checked:bg-secondary hover:bg-secondary/80 rounded-2xl">
                                         <img src="../assets/svg/chicken.svg" class="sm:w-[20px] w-[15px]" alt="Chicken">
@@ -162,49 +163,15 @@
                                         <img src="../assets/svg/chicken.svg" class="sm:w-[20px] w-[15px]" alt="Chicken">
                                         <p class="text-white text-[10px] sm:text-base">Chicken</p>
                                     </div>
-                                </label>
-                                <label class="relative flex sm:max-w-[100px] md:max-w-[105px] lg-[120px] max-w-[94px] items-center justify-center sm:max-h-[50px] h-[40px] bg-secondary/50 peer-checked:bg-secondary hover:bg-secondary/80 transition-colors leading-6 py-2 rounded-2xl cursor-pointer">
-                                    <input type="checkbox" name="ingredient" value="chicken" class="peer hidden">
-                                    <div class="flex items-center justify-center sm:gap-2 gap-1 px-2 w-full h-[40px] bg-secondary/50 peer-checked:bg-secondary hover:bg-secondary/80 rounded-2xl">
-                                        <img src="../assets/svg/chicken.svg" class="sm:w-[20px] w-[15px]" alt="Chicken">
-                                        <p class="text-white text-[10px] sm:text-base">Chicken</p>
-                                    </div>
-                                </label>
+                                </label> --}}
                                 
 
                             
                             </div>
                             <!-- Bahan Makanan -->
-
-                            <hr class="py-3">
-                            <h2 class="text-md font-semibold mb-4 dark:text-slate-200">Price Range:</h2>
-                            
-                            <div class="grid grid-cols-1 gap-3 md:gap-1 lg:gap-0 md:grid-cols-2 mb-5">
-                                <div class="w-72">
-                                    <div class="relative h-10 lg:w-full w-1/2 md:w-[75%]">
-                                        <div class="absolute grid w-5 h-5 place-items-center text-blue-gray-500 top-2/4 left-0 -translate-y-[96%]">
-                                            <span class="px-2 py-[10px] text-gray-700 bg-slate-300 rounded-l text-sm">Rp </span>
-                                        </div>
-                                        <input type="email" placeholder="Minimum"
-                                        class="peer h-full w-full rounded-[7px] !border pl-9 !border-gray-300 border-t-transparent bg-transparent bg-white px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700  shadow-lg shadow-gray-900/5 outline outline-0 ring-4 ring-transparent transition-all placeholder:text-gray-500 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 " />
-                                    </div>
-                                </div>
-                                
-                                
-                                <div class="w-72">
-                                    <div class="relative h-10 lg:w-full w-1/2 md:w-[75%] ">
-                                        <div class="absolute grid w-5 h-5 place-items-center text-blue-gray-500 top-2/4 left-0 -translate-y-[96%]">
-                                            <span class="px-2 py-[10px] text-gray-700 bg-slate-300 rounded-l text-sm">Rp </span>
-                                        </div>
-                                        <input type="email" placeholder="Maximum"
-                                        class="peer h-full w-full rounded-[7px] !border pl-9 !border-gray-300 border-t-transparent bg-transparent bg-white px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700  shadow-lg shadow-gray-900/5 outline outline-0 ring-4 ring-transparent transition-all placeholder:text-gray-500 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 " />
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="flex items-center justify-end gap-4 w-full">
                                 <button class="bg-primary transition duration-150 ease-in-out hover:bg-darkPrimary rounded-xl text-white px-6 py-3 text-base" onclick="modalHandler()">Reset</button>
-                                <button class="bg-primary transition duration-150 ease-in-out hover:bg-darkPrimary rounded-xl text-white px-10 py-3 text-base">Apply</button>
+                                <button type="submit" class="bg-primary transition duration-150 ease-in-out hover:bg-darkPrimary rounded-xl text-white px-10 py-3 text-base">Apply</button>
                             </div>
                         </form>
                         

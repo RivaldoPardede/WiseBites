@@ -15,7 +15,7 @@
             <div class="max-w-sm w-full px-8 shadow-2xl drop-shadow-lg rounded-lg">
                 <img src="../assets/svg/Logo.svg" class="mx-auto pt-10 w-20" alt="">
                 <h1 class="mb-2 text-center pb-10 text-xl font-semibold text-gray-900">Reset your password</h1>
-                <form action="{{ route('password.update') }}" method="POST" class="w-full pb-10">
+                <form action="{{ route('password.send_token') }}" method="POST" class="w-full pb-10">
                     @csrf
                     <input type="hidden" name="token">
                     <div class="mb-5 relative">

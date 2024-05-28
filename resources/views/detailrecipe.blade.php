@@ -90,7 +90,7 @@
                 <div class="flex flex-col lg:flex-row mb-5 ">
                     <!-- Menu Detail - Start -->
                     <div class="flex-shrink-0 dark:text-gray-300">
-                        <img src="../assets/png/food1.jpg" alt="Italian Chicken Salad" class="rounded-2xl w-full max-w-lg h-full max-h-[470px] px-6 mb-8">
+                        <img src="{{ $recipe['image'] }}" alt="Italian Chicken Salad" class="rounded-2xl w-full max-w-lg h-full max-h-[470px] px-6 mb-8">
                         <h1 class="text-[32px] mb-3 px-6">{{ $recipe['title'] }}</h1>
                         <p class="text-[32px] font-semibold text-secondary dark:text-gray-300 mb-3.5 px-6">{{ $recipe['pricePerServing']}}</p>
                         <div class="flex gap-x-16 ml-8 lg:ml-72 mb-5">
@@ -139,13 +139,7 @@
                     <!-- Direction - Start -->
                     <div class="bg-greybg dark:bg-secondary rounded-xl px-11 py-9">
                         <h2 class="text-2xl font-semibold text-center text-greyfont dark:text-gray-300 pb-9">Directions</h2>
-                        <ol class="custom-list-decimal list-inside text-greyfont dark:text-gray-300">
-                            <li>Wash and chop lettuce, purple cabbage, and cucumber.</li>
-                            <li>Boil eggs and corn separately.</li>
-                            <li>Grill chicken until cooked.</li>
-                            <li>Peel and slice boiled eggs.</li>
-                            <li>Cut grilled chicken into bite-sized pieces.</li>
-                        </ol>
+                        <p class="text-greyFont dark:text-gray-300">{!! $recipe['instructions'] !!}</p>
                     </div>
                     <!-- Direction - End -->
                 </div>
@@ -154,7 +148,7 @@
                 </div>
 
                 <!-- Estimation - Start -->
-                <div id="Estimation" class="fixed inset-0 bg-gray-700 bg-opacity-75 items-center justify-center hidden">
+                {{-- <div id="Estimation" class="fixed inset-0 bg-gray-700 bg-opacity-75 items-center justify-center hidden">
                     <div class="bg-white rounded-lg shadow-lg max-w-3xl max-h-fit w-full p-6 relative">
                         <span id="closeEstimationBtn" class="absolute top-0 right-0 p-4 cursor-pointer text-greyfont font-semibold">&times;</span>
                         <h2 class="text-center text-2xl font-bold mb-6">Estimation Price</h2>
@@ -195,7 +189,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> --}}
                 <!-- Estimation End -->
         </div>
         <!-- Main Content - End -->

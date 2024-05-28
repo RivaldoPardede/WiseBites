@@ -85,25 +85,31 @@
             <!-- Navbar - End -->
 
 
-            <section class="w-full max-w-[1190px] px-6 py-3 mx-auto grid grid-cols-1 min-[500px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-y-20 gap-x-14 mt-10 mb-5">
-                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-                    <a href="#">
-                        <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
-                        <div class="px-4 py-3">
-                            <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">Italian Chicken Salad</p>
-                            <div class="flex items-center mt-2">
-                                <p class="text-lg font-semibold text-black dark:text-slate-200">Rp 20.000</p>
-                                <div class="ml-auto">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200 fill-primary" viewBox="0 0 384 512">
-                                    <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
-                                </svg>
+            <section class="w-full max-w-[1190px] px-6 py-3 mx-auto grid grid-cols-1 min-[500px]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-y-20 gap-x-14 mt-10 mb-5 menu-container">
+                @foreach ($bookmark_menus as $menu)
+                    <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                        <a href="/detail/{{ $menu['id'] }}">
+                            <img src="{{ $menu['image'] }}" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
+                            <div class="px-4 py-3">
+                                <p class="text-lg font-bold text-black dark:text-slate-200 truncate capitalize">{{ $menu['title'] }}</p>
+                                <div class="flex items-center mt-2">
+                                    <p class="text-lg font-semibold text-black dark:text-slate-200">{{ $menu['pricePerServing'] }}</p>
+                                    <form action="{{ route('bookmark_menu.store') }}" method="POST" class="ml-auto" id="bookmark-menu-form">
+                                        @csrf
+                                        <input type="hidden" name="menu_id" value="{{ $menu['id'] }}">
+                                        <button type="submit">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-slate-800 dark:text-slate-200 fill-primary " viewBox="0 0 384 512">
+                                                <path d="M0 48C0 21.5 21.5 0 48 0h288c26.5 0 48 21.5 48 48v440c0 9-5 17.2-13 21.3s-17.6 3.4-24.9-1.8L192 397.5 37.9 507.5c-7.3 5.2-16.9 5.9-24.9 1.8S0 497 0 488V48z"/>
+                                            </svg>
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                @endforeach
 
-                <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+                {{-- <div class="w-64 sm:w-60 py-6 bg-white dark:bg-slate-600 shadow-xl rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
                     <a href="#">
                         <img src="../assets/png/exmFood.jpg" alt="Product" class="w-full h-60 object-cover rounded-t-xl" />
                         <div class="px-4 py-3">
@@ -152,7 +158,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </div> --}}
             </section>
         </div>
     </div>

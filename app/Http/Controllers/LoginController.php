@@ -19,7 +19,7 @@ class LoginController extends Controller
             'email' => 'required|email:dns',
             'password' => 'required|min:5|max:255|regex:/[a-z]/|regex:/[A-Z]/|regex:/[0-9]/'
         ]);
-
+        // dd(Auth::login($credentials));
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
