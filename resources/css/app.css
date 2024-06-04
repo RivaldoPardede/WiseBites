@@ -1,0 +1,35 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.open {
+    transform: translateX(0%);
+}
+
+.close {
+    transform: translateX(-100%);
+}
+
+.lineStyle::after {
+    content: "";
+    position: absolute;
+    left: 50;
+    bottom: -25px; 
+    width: 40%;
+    height: 5px;
+    background-color: #1f272d;
+    border-radius: 5px;
+    transform: scaleY(0);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.button-hover:hover::after{
+    background-color: #f14647;
+    transform: scaleY(1);
+}
+
+.rotate-circle {
+    transition: transform 1s ease;
+}
