@@ -39,7 +39,7 @@ WiseBite is a web-based application designed to provide users with food recipe r
     <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="figma" height="40" align="left"/> </a>
 </p>
 
-<br>
+<br><br><br>
 
 ## Instalation
 
