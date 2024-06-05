@@ -1,5 +1,6 @@
 <div style="display: flex; justify-content: center; align-items: center;">
-<p style="font-size: 64px; ">WiseBite <img src="public\assets\svg\Logo.svg"/></p>
+<img src="public\assets\svg\Logo.svg"/>
+<h1>WiseBite</h1>
 </div>
 
 ---
