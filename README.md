@@ -1,4 +1,4 @@
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
 <img src="public\assets\svg\Logo.svg"/>
 <h1>WiseBite</h1>
 </div>
