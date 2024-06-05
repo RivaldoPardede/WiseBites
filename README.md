@@ -20,7 +20,7 @@
 
 ## Preview
 
-video
+Demo Video : <a href="https://drive.google.com/file/d/1lF2AaKsV9WGBOlbqCb-N1qcOF5FvXm_l/view?usp=sharing">Video Demo</a>
 
 <br>
 
