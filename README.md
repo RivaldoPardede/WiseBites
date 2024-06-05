@@ -1,5 +1,5 @@
 <div style="display: flex; justify-content: center; align-items: center;">
-<img src="public\assets\svg\Logo.svg"/>
+<img src="public\assets\svg\Logo.svg" style="display: inline-block;"/>
 <h1>WiseBite</h1>
 </div>
 
