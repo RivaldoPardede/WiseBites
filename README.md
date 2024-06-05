@@ -93,7 +93,7 @@ Figma : <a href="https://www.figma.com/design/8vFYk6Wl0CMr2aUwJxXaL8/WiseBites?n
 
 ## Documents
 
-Software Requirement Specification :
+Software Requirement Specification : <a href="https://drive.google.com/drive/folders/1e1cDwK1Wu59N7AouZsDz614TRKSpkz-u?usp=sharing">WiseBites SRS</a>
 
 <br>
 
