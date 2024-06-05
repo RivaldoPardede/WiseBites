@@ -1,66 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div style="display: flex; justify-content: center; align-items: center;">
+<h1>WiseBite</h1>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<img src="public\assets\svg\Logo.svg"/>
 
-## About Laravel
+</div>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   [Preview](#preview)
+-   [Description](#description)
+-   [Tech Stack](#tech-stack)
+-   [Installation](#instalation)
+-   [Data Source](#data-source)
+-   [Design](#design)
+-   [Documents](#documents)
+-   [Contribution](#contribution)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Preview
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+video
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<br>
 
-## Laravel Sponsors
+## Description
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+WiseBite is a web-based application designed to provide users with food recipe recommendations. It offers suggestions based on two scenarios: matching recipes with the ingredients users currently have and providing recipe options that fit within users' budgets. Additionally, WiseBite aims to educate users about the ingredients and cooking steps involved in each recipe.
 
-### Premium Partners
+<br>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Tech Stack
+- <a href="https://tailwindcss.com">TailwindCSS</a>
+- <a href="https://laravel.com">Laravel</a>
 
-## Contributing
+<br>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Instalation
 
-## Code of Conduct
+1.  Clone this Repository
+    ```bash
+    git clone https://github.com/RivaldoPardede/ProjectADPL.git
+    ```
+2.  Install All the Requirements
+    ```bash
+    composer install
+    npm install
+    ```
+3.  Generate the env
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+4.  Open `.env` file and modify the database
+    ```bash
+    DB_CONNECTION='database_connection'
+    DB_HOST='database_host'
+    DB_PORT='database_port'
+    DB_DATABASE=wisebite
+    DB_USERNAME='database_username'
+    DB_PASSWORD='database_password'
+    ```
+5.  Migrate the database
+    ```bash
+    php artisan migrate:fresh
+    ```
+6.  Run the Application
+    ```bash
+    php artisan serve
+    npm run dev
+    ```
+7.  Stop the application by `ctrl + c`
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<br><br>
 
-## Security Vulnerabilities
+## Data Source
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+API : <a href="https://www.figma.com/design/8vFYk6Wl0CMr2aUwJxXaL8/WiseBites?node-id=0-1">Recipe Data</a>
 
-## License
+<br>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Design
+
+Figma : <a href="https://www.figma.com/design/8vFYk6Wl0CMr2aUwJxXaL8/WiseBites?node-id=0-1">WiseBite Design</a>
+
+<br>
+
+## Documents
+
+Software Requirement Specification :
+
+<br>
+
+## Contributors
+
+-   Leader:<br>
+    Rivaldo Dominggos Pardede - Front End<br>
+-   Member:<br>
+    Christian Nathaniel - Front End<br>
+    Dhea Tania Salsabila Harahap - UI/UX<br>
+    Frederick Godiva - Back End<br>
+    Fico Yanton Jeremia Sibagariang - Back End<br>
+    Rio Octaviannus Loka - Back End<br>
