@@ -1,7 +1,5 @@
-<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-<img src="public\assets\svg\Logo.svg"/>
-<h1>WiseBite</h1>
-</div>
+<p align="center"><img src="public\assets\svg\Logo.svg"/></p>
+<h1 align="center">WiseBite</h1>
 
 ---
 
@@ -14,7 +12,7 @@
 -   [Data Source](#data-source)
 -   [Design](#design)
 -   [Documents](#documents)
--   [Contribution](#contribution)
+-   [Contributors](#contributors)
 
 ---
 
@@ -31,12 +29,19 @@ WiseBite is a web-based application designed to provide users with food recipe r
 <br>
 
 ## Tech Stack
-- <a href="https://tailwindcss.com">TailwindCSS</a>
-- <a href="https://laravel.com">Laravel</a>
+<p align="left">
+    <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40" align="left"/> </a> 
+    <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40" align="left"/> </a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40" align="left"/> </a>
+    <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40" align="left"/> </a>
+    <a href="https://laravel.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/laravel/laravel-ar21.svg" alt="laravel" height="40" align="left"/> </a>
+    <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-ar21.svg" alt="figma" height="40" align="left"/> </a>
+    <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-horizontal.svg" alt="figma" height="40" align="left"/> </a>
+</p>
 
 <br>
 
-## Installation
+## Instalation
 
 1.  Clone this Repository
     ```bash
@@ -47,12 +52,12 @@ WiseBite is a web-based application designed to provide users with food recipe r
     composer install
     npm install
     ```
-3.  Generate the `.env`
+3.  Generate the env
     ```bash
     cp .env.example .env
     php artisan key:generate
     ```
-4.  Open `.env` File and Modify the Requirements
+4.  Open `.env` file and modify the database
     ```bash
     DB_CONNECTION='database_connection'
     DB_HOST='database_host'
@@ -61,7 +66,7 @@ WiseBite is a web-based application designed to provide users with food recipe r
     DB_USERNAME='database_username'
     DB_PASSWORD='database_password'
     ```
-5.  Migrate the Database
+5.  Migrate the database
     ```bash
     php artisan migrate:fresh
     ```
@@ -70,13 +75,13 @@ WiseBite is a web-based application designed to provide users with food recipe r
     php artisan serve
     npm run dev
     ```
-7.  Stop the Application by `ctrl + c`
+7.  Stop the application by `ctrl + c`
 
 <br><br>
 
 ## Data Source
 
-API : <a href="https://www.figma.com/design/8vFYk6Wl0CMr2aUwJxXaL8/WiseBites?node-id=0-1">Recipe Data</a>
+API : <a href="https://spoonacular.com/food-api/">Recipe Data</a>
 
 <br>
 
@@ -88,7 +93,7 @@ Figma : <a href="https://www.figma.com/design/8vFYk6Wl0CMr2aUwJxXaL8/WiseBites?n
 
 ## Documents
 
-Software Requirement Specification : <a href="https://drive.google.com/drive/folders/1e1cDwK1Wu59N7AouZsDz614TRKSpkz-u?usp=sharing">WiseBite SRS</a>
+Software Requirement Specification :
 
 <br>
 
