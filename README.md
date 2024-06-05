@@ -20,7 +20,7 @@
 
 ## Preview
 
-Demo Video : <a href="https://drive.google.com/file/d/1lF2AaKsV9WGBOlbqCb-N1qcOF5FvXm_l/view?usp=sharing">WiseBite Demo</a>
+Demo Video : <a href="https://drive.google.com/file/d/1lF2AaKsV9WGBOlbqCb-N1qcOF5FvXm_l/view?usp=sharing" target="_blank">WiseBite Demo</a>
 
 <br>
 
