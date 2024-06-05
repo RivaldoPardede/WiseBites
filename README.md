@@ -1,5 +1,5 @@
 <p align="center"><img src="public\assets\svg\Logo.svg"/></p>
-<h1 align="center">WiseBite</h1>
+<h1 align="center">WiseBites</h1>
 
 ---
 
@@ -18,13 +18,13 @@
 
 ## Preview
 
-Demo Video : <a href="https://drive.google.com/file/d/1lF2AaKsV9WGBOlbqCb-N1qcOF5FvXm_l/view?usp=sharing">WiseBite Demo</a>
+Demo Video : <a href="https://drive.google.com/file/d/1lF2AaKsV9WGBOlbqCb-N1qcOF5FvXm_l/view?usp=sharing">WiseBites Demo</a>
 
 <br>
 
 ## Description
 
-WiseBite is a web-based application designed to provide users with food recipe recommendations. It offers suggestions based on two scenarios: matching recipes with the ingredients users currently have and providing recipe options that fit within users' budgets. Additionally, WiseBite aims to educate users about the ingredients and cooking steps involved in each recipe.
+WiseBites is a web-based application designed to provide users with food recipe recommendations. It offers suggestions based on two scenarios: matching recipes with the ingredients users currently have and providing recipe options that fit within users' budgets. Additionally, WiseBite aims to educate users about the ingredients and cooking steps involved in each recipe.
 
 <br>
 
@@ -45,7 +45,7 @@ WiseBite is a web-based application designed to provide users with food recipe r
 
 1.  Clone this Repository
     ```bash
-    git clone https://github.com/RivaldoPardede/ProjectADPL.git
+    git clone https://github.com/RivaldoPardede/WiseBites.git
     ```
 2.  Install All the Requirements
     ```bash
@@ -87,7 +87,7 @@ API : <a href="https://spoonacular.com/food-api/">Recipe Data</a>
 
 ## Design
 
-Figma : <a href="https://www.figma.com/design/8vFYk6Wl0CMr2aUwJxXaL8/WiseBites?node-id=0-1">WiseBite Design</a>
+Figma : <a href="https://www.figma.com/design/8vFYk6Wl0CMr2aUwJxXaL8/WiseBites?node-id=0-1">WiseBites Design</a>
 
 <br>
 
