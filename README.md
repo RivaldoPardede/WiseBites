@@ -36,7 +36,7 @@ WiseBite is a web-based application designed to provide users with food recipe r
 
 <br>
 
-## Instalation
+## Installation
 
 1.  Clone this Repository
     ```bash
@@ -47,12 +47,12 @@ WiseBite is a web-based application designed to provide users with food recipe r
     composer install
     npm install
     ```
-3.  Generate the env
+3.  Generate the `.env`
     ```bash
     cp .env.example .env
     php artisan key:generate
     ```
-4.  Open `.env` file and modify the database
+4.  Open `.env` File and Modify the Requirements
     ```bash
     DB_CONNECTION='database_connection'
     DB_HOST='database_host'
@@ -61,7 +61,7 @@ WiseBite is a web-based application designed to provide users with food recipe r
     DB_USERNAME='database_username'
     DB_PASSWORD='database_password'
     ```
-5.  Migrate the database
+5.  Migrate the Database
     ```bash
     php artisan migrate:fresh
     ```
@@ -70,7 +70,7 @@ WiseBite is a web-based application designed to provide users with food recipe r
     php artisan serve
     npm run dev
     ```
-7.  Stop the application by `ctrl + c`
+7.  Stop the Application by `ctrl + c`
 
 <br><br>
 
